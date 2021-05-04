@@ -6,7 +6,7 @@ namespace Сonstruction_сompany.Auxiliary_classes
 {
     public static class CheckLength
     {
-        #region Check
+        #region Check methods
         //Перевірка розміру TextBox полів
         public static void Check(ref TextBox textBox, ref Border border, ref Label label)
         {
