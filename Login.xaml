@@ -8,7 +8,7 @@
         Title="Login" Height="480" Width="380"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid>

@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
+using static Сonstruction_сompany.Auxiliary_classes.CheckLength;
 namespace Сonstruction_сompany
 {
     /// <summary>
@@ -24,11 +16,12 @@ namespace Сonstruction_сompany
         }
         #endregion
         #region Events
+        //allows you to move the lid on the desktop
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed) DragMove();
         }
-
+        //Logic of checking the entered data for login
         private void LoginB_Click(object sender, RoutedEventArgs e)
         {
             LogBar.Visibility = Visibility.Hidden;
@@ -72,71 +65,38 @@ namespace Сonstruction_сompany
             }
                
         }
-
+        //Closing the window
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        //Launch the registration window
         private void BRegistry_Click(object sender, RoutedEventArgs e)
         {
-            //new Registration().Show();
+            new Registration().Show();
             this.Close();
         }
-
+        //Erases the default value in the login field
         private void LoginText_GotMouseCapture(object sender, MouseEventArgs e)
         {
             if (LoginText.Text == "Login") LoginText.Text = "";
             if (BLogin.Background == Brushes.Red) BLogin.Background = Brushes.White;
         }
-
+        //Erases the default value in the password field
         private void PasswordText_GotMouseCapture(object sender, MouseEventArgs e)
         {
             if (PasswordText.Password == "Password") PasswordText.Password = "";
             if (BPassword.Background == Brushes.Red) BPassword.Background = Brushes.White;
         }
-
+        //Check the number of characters entered in the login field
         private void LoginText_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            if (LoginText.Text.Length < 6)
-            {
-                LogBar.Visibility = Visibility.Visible;
-                LogBar.Content = "minimum number of characters - 6!";
-                BLogin.Background = Brushes.Red;
-            }
-            else if (LoginText.Text.Length > 18)
-            {
-                LogBar.Visibility = Visibility.Visible;
-                LogBar.Content = "maximum number of characters - 18!";
-                BLogin.Background = Brushes.Red;
-            }
-            else
-            {
-                LogBar.Visibility = Visibility.Visible;
-                BLogin.Background = Brushes.Green;
-            }
-                
+            Check(ref LoginText, ref BLogin, ref LogBar);
         }
-
+        //Check the number of characters entered in the password field
         private void PasswordText_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            if (PasswordText.Password.Length < 6)
-            {
-                LogBar.Visibility = Visibility.Visible;
-                LogBar.Content = "minimum number of characters - 6!";
-                BPassword.Background = Brushes.Red;
-            }
-            else if (PasswordText.Password.Length > 18)
-            {
-                LogBar.Visibility = Visibility.Visible;
-                LogBar.Content = "maximum number of characters - 18!";
-                BPassword.Background = Brushes.Red;
-            }
-            else
-            {
-                LogBar.Visibility = Visibility.Visible;
-                BPassword.Background = Brushes.Green;
-            }
+            Check(ref PasswordText, ref BPassword, ref LogBar);
         }
         #endregion
     }
