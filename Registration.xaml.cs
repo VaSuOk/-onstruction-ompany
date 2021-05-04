@@ -108,17 +108,17 @@ namespace Сonstruction_сompany
 */
         }
 
-        private void Reseller_Click(object sender, RoutedEventArgs e)
+        private void Customer_Click(object sender, RoutedEventArgs e)
         {
-            Reseller.Opacity = 1;
-            Manufacturer.Opacity = 0.5;
+            Customer.Opacity = 1;
+            Worker.Opacity = 0.5;
             //user.Set_UserType(UserType.Reseller);
         }
 
-        private void Manufacturer_Click(object sender, RoutedEventArgs e)
+        private void Worker_Click(object sender, RoutedEventArgs e)
         {
-            Reseller.Opacity = 0.5;
-            Manufacturer.Opacity = 1;
+            Customer.Opacity = 0.5;
+            Worker.Opacity = 1;
             //user.Set_UserType(UserType.Manufacture);
         }
 

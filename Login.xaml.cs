@@ -16,6 +16,20 @@ namespace Сonstruction_сompany
         }
         #endregion
         #region Events
+        //
+        private void Customer_Click(object sender, RoutedEventArgs e)
+        {
+            Customer.Opacity = 1;
+            Worker.Opacity = 0.5;
+            //user.Set_UserType(UserType.Reseller);
+        }
+
+        private void Worker_Click(object sender, RoutedEventArgs e)
+        {
+            Customer.Opacity = 0.5;
+            Worker.Opacity = 1;
+            //user.Set_UserType(UserType.Manufacture);
+        }
         //allows you to move the lid on the desktop
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {

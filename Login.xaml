@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Сonstruction_сompany" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="Login" Height="480" Width="380"
+        Title="Login" Height="520" Width="380"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize"
         MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen">
@@ -13,7 +13,7 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition  Height="210"/>
+                <RowDefinition  Height="150"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
@@ -55,7 +55,7 @@
                     </TextBlock.Effect>
                 </TextBlock>
                 </Border>
-                <Border CornerRadius="10" Grid.RowSpan="1" Background="White" Width="90" Height="40" Opacity="0.87" Margin="0,87,0,0">
+                <Border CornerRadius="10" Grid.RowSpan="1" Background="White" Width="90" Height="40" Opacity="0.87" Margin="0,30,0,0">
                     <TextBlock Text="Log in" 
                            HorizontalAlignment="Center"
                            FontSize="24"
@@ -72,8 +72,35 @@
 
 
             <StackPanel Grid.Row="1">
-                <Border CornerRadius="20" Grid.RowSpan="2" Background="Purple" Margin="30, 10,30,0" Opacity="0.86">
+                <Border CornerRadius="20" Grid.RowSpan="2" Background="Purple" Margin="30,10,30,0" Opacity="0.86">
                     <StackPanel Margin="0,10,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                            <Label x:Name="TypeText"
+                             
+                             Content="PICK USER TYPE"
+                            FontSize="24"
+                            FontWeight="Bold"
+                            FontFamily="Helvetica"
+                            Foreground="Orange"
+                             HorizontalAlignment="Center"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Center"
+                             Opacity="1"
+                             Height="32"
+                             Margin="43,0,0,0">
+                                <Label.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                </Label.Effect>
+                            </Label>
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Button Opacity="0.7" Margin="33,0,60,0" x:Name="Customer" Width="100" Height="40" Content="CUSTOMER" Click="Customer_Click"></Button>
+                            <Button Opacity="0.7" x:Name="Worker" Width="100" Height="40" Content="WORKER" Click="Worker_Click"></Button>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBox x:Name="LoginText"
                                      LostKeyboardFocus="LoginText_LostKeyboardFocus"
@@ -90,7 +117,7 @@
                                      HorizontalContentAlignment="Left"
                                      Opacity="1"
                                      Height="28"
-                                     Margin="33,0,0,0" GotMouseCapture="LoginText_GotMouseCapture">
+                                     Margin="33,30,0,0" GotMouseCapture="LoginText_GotMouseCapture">
                                     <TextBox.Effect>
                                         <DropShadowEffect ShadowDepth="1" Color="Black"/>
                                     </TextBox.Effect>   
@@ -98,7 +125,7 @@
                             <iconPacks:PackIconMaterial Kind="Login" 
                                                     Height="28"
                                                     Width="28"
-                                                VerticalAlignment="Center" 
+                                                VerticalAlignment="Bottom" 
                                                 HorizontalAlignment="Center" 
                                                 Foreground="Orange"/>
                         </StackPanel>

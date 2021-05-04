@@ -305,8 +305,8 @@
 
 
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <Button Opacity="0.7" Margin="33,0,60,0" x:Name="Reseller" Width="100" Height="40" Content="CUSTOMER" Click="Reseller_Click"></Button>
-                            <Button Opacity="0.7" x:Name="Manufacturer" Width="100" Height="40" Content="WORKER" Click="Manufacturer_Click"></Button>
+                            <Button Opacity="0.7" Margin="33,0,60,0" x:Name="Customer" Width="100" Height="40" Content="CUSTOMER" Click="Customer_Click"></Button>
+                            <Button Opacity="0.7" x:Name="Worker" Width="100" Height="40" Content="WORKER" Click="Worker_Click"></Button>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
