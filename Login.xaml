@@ -103,59 +103,59 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBox x:Name="LoginText"
-                                     LostKeyboardFocus="LoginText_LostKeyboardFocus"
-                                     SelectionLength="18"
-                                     FontFamily="Helvetica"
-                                     FontWeight="Bold"
-                                     Text="Login"
-                                     FontSize="22"
-                                     HorizontalAlignment="Center"
-                                     Foreground="Orange"
-                                     Background="Transparent"
-                                     BorderThickness="0"
-                                     Width="235"
-                                     HorizontalContentAlignment="Left"
-                                     Opacity="1"
-                                     Height="28"
-                                     Margin="33,30,0,0" GotMouseCapture="LoginText_GotMouseCapture">
-                                    <TextBox.Effect>
-                                        <DropShadowEffect ShadowDepth="1" Color="Black"/>
-                                    </TextBox.Effect>   
+                                LostKeyboardFocus="LoginText_LostKeyboardFocus"
+                                SelectionLength="18"
+                                FontFamily="Helvetica"
+                                FontWeight="Bold"
+                                Text="Login"
+                                FontSize="22"
+                                HorizontalAlignment="Center"
+                                Foreground="Orange"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Width="235"
+                                HorizontalContentAlignment="Left"
+                                Opacity="1"
+                                Height="28"
+                                Margin="33,30,0,0" GotMouseCapture="LoginText_GotMouseCapture">
+                                <TextBox.Effect>
+                                    <DropShadowEffect ShadowDepth="1" Color="Black"/>
+                                </TextBox.Effect>
                             </TextBox>
                             <iconPacks:PackIconMaterial Kind="Login" 
-                                                    Height="28"
-                                                    Width="28"
-                                                VerticalAlignment="Bottom" 
-                                                HorizontalAlignment="Center" 
-                                                Foreground="Orange"/>
+                                Height="28"
+                                Width="28"
+                                VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Center" 
+                                Foreground="Orange"/>
                         </StackPanel>
 
                         <Border x:Name="BLogin"
-                                HorizontalAlignment="Left"
-                                Margin="33,0,0,0"
-                        Width="230"
-                        Height="2"
-                        Background="White"
-                        Opacity="1"/>
+                            HorizontalAlignment="Left"
+                            Margin="33,0,0,0"
+                            Width="230"
+                            Height="2"
+                            Background="White"
+                            Opacity="1"/>
 
 
 
                         <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                             <PasswordBox x:Name="PasswordText"
-                                         LostKeyboardFocus ="PasswordText_LostKeyboardFocus"
-                             FontFamily="Helvetica"
-                             FontWeight="Light"
-                             Password="Password"
-                             FontSize="20"
-                             HorizontalAlignment="Center"
-                             Foreground="Orange"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Width="235"
-                             HorizontalContentAlignment="Left"
-                             Opacity="1"
-                             Height="25"
-                             Margin="33,0,0,0" GotMouseCapture="PasswordText_GotMouseCapture"/>
+                                LostKeyboardFocus ="PasswordText_LostKeyboardFocus"
+                                FontFamily="Helvetica"
+                                FontWeight="Light"
+                                Password="Password"
+                                FontSize="20"
+                                HorizontalAlignment="Center"
+                                Foreground="Orange"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Width="235"
+                                HorizontalContentAlignment="Left"
+                                Opacity="1"
+                                Height="25"
+                                Margin="33,0,0,0" GotMouseCapture="PasswordText_GotMouseCapture"/>
                             <iconPacks:PackIconMaterial Kind="FormTextboxPassword" 
                                                 Height="28"
                                                 Width="28"
@@ -188,16 +188,17 @@
                             <StackPanel Orientation="Vertical" Height="30" Background="Transparent">
 
                                 <Label Width="380"
-                           VerticalAlignment="Bottom" 
-                           HorizontalAlignment="Center" 
-                            FontFamily="Helvetica"
-                           Name="LogBar"
-                           Visibility="Hidden"
-                           Content="Tefdsfsfs"
-                           FontSize="16"
-                           Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                    VerticalAlignment="Bottom" 
+                                    HorizontalAlignment="Center" 
+                                    FontFamily="Helvetica"
+                                    Name="LogBar"
+                                    Visibility="Hidden"
+                                    Content="Tefdsfsfs"
+                                    FontSize="16"
+                                    FontWeight="Bold"
+                                    Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                            
-                           />
+                                />
                             </StackPanel>
                         </Border>
                     </StackPanel>

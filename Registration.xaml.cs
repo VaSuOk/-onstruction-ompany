@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using Сonstruction_сompany.RequestToServer;
+using Сonstruction_сompany.Users_classes;
 using static Сonstruction_сompany.Auxiliary_classes.CheckLength;
 namespace Сonstruction_сompany
 {
@@ -9,10 +12,14 @@ namespace Сonstruction_сompany
     /// </summary>
     public partial class Registration : Window
     {
+        #region Data fields
+        private UserType userType;
+        #endregion
         #region Initialize
         public Registration()
         {
             InitializeComponent();
+            userType = UserType.Unregistered;
         }
         #endregion
         #region Events
@@ -33,7 +40,7 @@ namespace Сonstruction_сompany
         }
 
         private void BRegistry_Click(object sender, RoutedEventArgs e)
-        {/*
+        {
             if (LoginText.Text == "" || LoginText.Text == "Login")
             {
                 BLogin.Background = Brushes.Red;
@@ -70,7 +77,7 @@ namespace Сonstruction_сompany
                 LogBar.Content = "Введіть номер телефону!";
                 LogBar.Visibility = Visibility.Visible;
             }
-            else if (user.GetUserType() == UserType.Unregistered)
+            else if (userType == UserType.Unregistered)
             {
                 TypeText.Foreground = Brushes.Red;
                 LogBar.Content = "Оберіть тип користувача!";
@@ -81,7 +88,8 @@ namespace Сonstruction_сompany
                 TypeText.Foreground = Brushes.White;
                 LogBar.Visibility = Visibility.Hidden;
 
-                switch (user.UserRegistration(LoginText.Text, PasswordText.Password, NameText.Text + " " + SurnameText.Text, EmailText.Text, PhoneText.Text, user.GetUserType()))
+                string data = String.Format("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}", "registration", userType, NameText.Text, SurnameText.Text, EmailText.Text, PhoneText.Text, LoginText.Text, PasswordText.Password);
+                switch (Request.SendData(data))
                 {
                     case 0:
                         {
@@ -92,7 +100,6 @@ namespace Сonstruction_сompany
                     case 1:
                         {
                             //відкрити потрібне вікно!
-                            //new ULogin().Show();
                             this.Close();
                             break;
                         }
@@ -105,21 +112,20 @@ namespace Сonstruction_сompany
                 }
 
             }
-*/
         }
 
         private void Customer_Click(object sender, RoutedEventArgs e)
         {
             Customer.Opacity = 1;
             Worker.Opacity = 0.5;
-            //user.Set_UserType(UserType.Reseller);
+            userType = UserType.Customer;
         }
 
         private void Worker_Click(object sender, RoutedEventArgs e)
         {
             Customer.Opacity = 0.5;
             Worker.Opacity = 1;
-            //user.Set_UserType(UserType.Manufacture);
+            userType = UserType.Worker;
         }
 
         private void LoginText_GotMouseCapture(object sender, MouseEventArgs e)

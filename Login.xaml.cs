@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using Сonstruction_сompany.RequestToServer;
+using Сonstruction_сompany.Users_classes;
 using static Сonstruction_сompany.Auxiliary_classes.CheckLength;
 namespace Сonstruction_сompany
 {
@@ -9,10 +12,16 @@ namespace Сonstruction_сompany
     /// </summary>
     public partial class Login : Window
     {
+        #region Data fields
+        private UserType userType;
+        #endregion
         #region Initialize
         public Login()
         {
             InitializeComponent();
+            userType = UserType.Unregistered;
+            new MainMenu().Show();
+            this.Close();
         }
         #endregion
         #region Events
@@ -21,14 +30,16 @@ namespace Сonstruction_сompany
         {
             Customer.Opacity = 1;
             Worker.Opacity = 0.5;
-            //user.Set_UserType(UserType.Reseller);
+            userType = UserType.Customer;
+            TypeText.Foreground = Brushes.Orange;
         }
 
         private void Worker_Click(object sender, RoutedEventArgs e)
         {
             Customer.Opacity = 0.5;
             Worker.Opacity = 1;
-            //user.Set_UserType(UserType.Manufacture);
+            userType = UserType.Worker;
+            TypeText.Foreground = Brushes.Orange;
         }
         //allows you to move the lid on the desktop
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -51,10 +62,16 @@ namespace Сonstruction_сompany
                 LogBar.Content = "Введіть пароль!";
                 LogBar.Visibility = Visibility.Visible;
             }
+            else if (userType == UserType.Unregistered)
+            {
+                TypeText.Foreground = Brushes.Red;
+                LogBar.Content = "Оберіть тип користувача!";
+                LogBar.Visibility = Visibility.Visible;
+            }
             else
             {
-
-                /*switch (user.UserLogin(LoginText.Text, PasswordText.Password))
+                string data = String.Format("{0}:{1}:{2}:{3}", "login", userType, LoginText.Text, PasswordText.Password);
+                switch (Request.SendData(data))
                 {
                     case 0:
                         {
@@ -65,7 +82,7 @@ namespace Сonstruction_сompany
                     case 1:
                         {
                             //відкрити потрібне вікно!
-                            //new MainManufactore(user).Show(); //!!!!!!!!!!!!!!!!
+                            LogBar.Content = "Успішно!";
                             this.Close();
                             break;
                         }
@@ -75,9 +92,9 @@ namespace Сonstruction_сompany
                             LogBar.Visibility = Visibility.Visible;
                             break;
                         }
-                } */
+                }
             }
-               
+
         }
         //Closing the window
         private void Exit_Click(object sender, RoutedEventArgs e)
