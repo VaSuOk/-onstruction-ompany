@@ -1,0 +1,380 @@
+﻿<Window x:Class="Сonstruction_сompany.MainInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Сonstruction_сompany" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d" Height="700"  Width="1100" Foreground="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        MouseDown="Window_MouseDown" Background="Transparent" AllowsTransparency="True" >
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="650"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Border  CornerRadius="40" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <Border.Background>
+                <ImageBrush ImageSource="D:\KPK\ДИПЛОМ\SOFT\Сonstruction сompany\Source\fon2.jpg" Stretch="UniformToFill"/>
+            </Border.Background>
+        </Border>
+
+        <Grid x:Name="GridMain" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="650" Width="1100" Grid.Row="1" >
+            
+            <Border Background="White" Opacity="0.7" BorderBrush="Transparent" BorderThickness="10" CornerRadius="40" Grid.ColumnSpan="2" Width="1100" />
+            <ScrollViewer Grid.Row="1" Background="Transparent" Height="600" VerticalScrollBarVisibility="Hidden">
+                <Grid Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="330"></RowDefinition>
+                    <RowDefinition Height="260"></RowDefinition>
+                    <RowDefinition Height="310"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Margin="0">
+                        <Border Width="1070" Height="300" CornerRadius="40" x:Name="slide">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="1"/>
+                                            </Border.Effect>
+                                            <Border.Background>
+                                                <ImageBrush />
+                                            </Border.Background>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BLeft" Background="Transparent" Width="40" Height="100" VerticalAlignment="Center" 
+                                        HorizontalAlignment="Left" Content="(" FontSize="70" FontWeight="Bold" FontFamily="Helvetica" 
+                                        Click="BLeft_Click" Opacity="0.5"></Button>
+                                <Button x:Name="BRight" Background="Transparent" Width="40" Height="100" VerticalAlignment="Center" 
+                                        HorizontalAlignment="Right" Content=")" FontSize="70" Margin="985,0,0,0" FontWeight="Bold" 
+                                        FontFamily="Helvetica" Opacity="0.5" Click="BRight_Click"></Button>
+                            </StackPanel>
+                            
+                            
+                            </Border>
+                </StackPanel >
+                    <Border Width="1070" Height="250" CornerRadius="40" Background="White" Opacity="0.8" Margin="0,10,0,0" Grid.Row="1">
+                    <StackPanel Margin="25">
+                        
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="BUILD"
+                               Margin="50,0,0,0"
+                           FontWeight="Bold"
+                           FontFamily="Helvetica"
+                           FontSize="32"
+                           VerticalAlignment="Center"
+                           Foreground="Orange"
+                           HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+
+                                </TextBlock>
+                                <TextBlock Text="4.YOU"
+                                    FontWeight="Bold"
+                                       FontFamily="Helvetica"
+                                       FontSize="32"
+                                       VerticalAlignment="Center"
+                                       Foreground="OrangeRed"
+                                       HorizontalAlignment="Center">    
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+
+                                </TextBlock>
+                                <TextBlock Text=" - це будівельне підприємство, яке динамічно розвивається"
+                                    FontWeight="Bold"
+                                       FontFamily="Helvetica"
+                                       FontSize="26"
+                                       VerticalAlignment="Center"
+                                       Foreground="Orange"
+                                       HorizontalAlignment="Center">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+
+                                </TextBlock>
+                            </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                                <TextBlock Text="та забезпечує надання високої якості послуг в будівельній галузі."
+                                    FontWeight="Bold"
+                                       FontFamily="Helvetica"
+                                       FontSize="26"
+                                       VerticalAlignment="Center"
+                                       Foreground="Orange"
+                                       HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+
+                                </TextBlock>
+                                <StackPanel Orientation="Horizontal" Margin="50,10,0,0">
+                                    <TextBlock Text="Основними напрямками діяльності є :"
+                                    FontWeight="Bold"
+                                       FontFamily="Helvetica"
+                                       FontSize="28"
+                                       VerticalAlignment="Center"
+                                       Foreground="OrangeRed"
+                                       HorizontalAlignment="Left">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                        </TextBlock.Effect>
+
+                                    </TextBlock>
+                                    <TextBlock Text="будівництво багатоквартирних"
+                                    FontWeight="Bold"
+                                       FontFamily="Helvetica"
+                                       FontSize="26"
+                                               Margin="10,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Foreground="Orange"
+                                       HorizontalAlignment="Left">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                        </TextBlock.Effect>
+
+                                    </TextBlock>
+                                </StackPanel>
+                                <TextBlock Text="житлових будинків, приватних будинків, офісних, виробничих, відпочинково-оздоровчих об'єктів."
+                                    FontWeight="Bold"
+                                           TextWrapping="Wrap"
+                                       FontFamily="Helvetica"
+                                       FontSize="26"
+                                               Margin="0,0,0,0"
+                                           Height="100"
+                                       VerticalAlignment="Center"
+                                       Foreground="Orange"
+                                       HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+
+                                </TextBlock>
+                            </StackPanel>
+                            
+                    </StackPanel>
+                    <Border.Effect>
+                                <DropShadowEffect ShadowDepth="1"/>
+                            </Border.Effect>
+                        </Border>
+                    <StackPanel Grid.Row="2">
+                        <Border Width="1070" Height="300" CornerRadius="40" Background="White" Opacity="1" Margin="0,10,0,0">
+                            <StackPanel>
+                                <TextBlock Text="Статистика"
+                                    Margin="0,10,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="32"
+                                    VerticalAlignment="Center"
+                                    Foreground="OrangeRed"
+                                    HorizontalAlignment="Center">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+
+                                </TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Кількість побудованих об'єктів -"
+                                                Margin="50,40,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="25"
+                                                VerticalAlignment="Center"
+                                                Foreground="Orange"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock Text="0"
+                                                x:Name="amountReadyBuilding"
+                                                Margin="10,40,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="25"
+                                                VerticalAlignment="Center"
+                                                Foreground="Green"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <iconPacks:PackIconMaterial Kind="OfficeBuilding" 
+                                                Height="35"
+                                                Width="35"
+                                                                        Margin="10,0,0,0"
+                                                VerticalAlignment="Bottom" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="Orange"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Кількість замовлених об'єктів   -"
+                                                Margin="50,50,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="25"
+                                                VerticalAlignment="Center"
+                                                Foreground="Orange"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock Text="0"
+                                                x:Name="amountOrderBuilding"
+                                                Margin="10,50,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="24"
+                                                VerticalAlignment="Center"
+                                                Foreground="Green"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <iconPacks:PackIconMaterial Kind="BookAccount" 
+                                                Height="35"
+                                                Width="35"
+                                                                        Margin="10,0,0,0"
+                                                VerticalAlignment="Bottom" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="Orange"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Кількість поданих анкет       -"
+                                                Margin="40,40,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="25"
+                                                VerticalAlignment="Center"
+                                                Foreground="Orange"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock Text="0"
+                                                x:Name="amountWorkers"
+                                                Margin="10,40,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="25"
+                                                VerticalAlignment="Center"
+                                                Foreground="Green"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <iconPacks:PackIconMaterial Kind="BookAccount" 
+                                                Height="35"
+                                                Width="35"
+                                                                        Margin="10,0,0,0"
+                                                VerticalAlignment="Bottom" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="Orange"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Кількість активних завдань -"
+                                                Margin="40,50,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="25"
+                                                VerticalAlignment="Center"
+                                                Foreground="Orange"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock Text="0"
+                                                x:Name="amountActivityOrders"
+                                                Margin="10,50,0,0"
+                                                FontWeight="Bold"
+                                                FontFamily="Helvetica"
+                                                FontSize="24"
+                                                VerticalAlignment="Center"
+                                                Foreground="Green"
+                                                HorizontalAlignment="Left">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <iconPacks:PackIconMaterial Kind="BookAccount" 
+                                                Height="35"
+                                                Width="35"
+                                                                        Margin="10,0,0,0"
+                                                VerticalAlignment="Bottom" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="Orange"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+                
+            
+        </Grid>
+        <Grid Height="60" VerticalAlignment="Top" Background="Transparent">
+
+
+            
+            <Border CornerRadius="20" Grid.RowSpan="2" Background="Purple" Margin="10,0,10,0" Opacity="1" Height="40">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="BUILD"
+                               Margin="430,0,0,0"
+                           FontWeight="Bold"
+                           FontFamily="Helvetica"
+                           FontSize="32"
+                           VerticalAlignment="Center"
+                           Foreground="Orange"
+                           HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                    </TextBlock.Effect>
+                        
+                </TextBlock>
+                    <TextBlock Text="4.YOU"
+                           FontWeight="Bold"
+                           FontFamily="Helvetica"
+                           FontSize="32"
+                           VerticalAlignment="Center"
+                           Foreground="OrangeRed"
+                           HorizontalAlignment="Center">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                        </TextBlock.Effect>
+
+                    </TextBlock>
+                </StackPanel>
+                
+                
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button HorizontalAlignment="Right" 
+                        Width="40" 
+                        Height="40"
+                        Content="X"
+                        FontSize="26"
+                        Margin="5,6,30,5"
+                        Click="Exit_Click"
+                        FontWeight="Bold"
+                        Name="Exit"
+                        />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

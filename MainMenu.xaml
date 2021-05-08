@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Сonstruction_сompany"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600"  Width="1080" Foreground="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        mc:Ignorable="d" Height="600"  Width="1100" Foreground="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
         MouseDown="Window_MouseDown" Background="Transparent" AllowsTransparency="True" >
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="250"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="70"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -67,7 +67,7 @@
                        Margin="68,0,0,0"
                        />
         </Grid>
-        <Grid  Width="70" HorizontalAlignment="Left" Background="Transparent" >
+        <Grid x:Name="GridMenu" Width="80" HorizontalAlignment="Left" Background="Transparent" >
 
 
             <StackPanel>
@@ -82,73 +82,37 @@
                         </TransformGroup>
                     </Grid.RenderTransform>
 
-                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5,70,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonOpenMenu_Click">
-                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
+                    <Button x:Name="ButtonOpenMenu" Height="58" Width="58" Margin="12,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="White" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Kind="Menu" Width="40" Height="40"/>
                     </Button>
-                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5,70,0,0" HorizontalAlignment="Right" VerticalAlignment="Top"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF081132" Click="ButtonCloseMenu_Click">
-                        <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="58" Width="58" Margin="12,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="{x:Null}" Foreground="#FF081132" Click="ButtonCloseMenu_Click">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Width="40" Height="40"/>
                     </Button>
 
                     <Image Height="80" VerticalAlignment="Bottom"/>
                 </Grid>
 
 
-                <Grid x:Name="GridMenu">
-  
-                    <Border BorderThickness="0"  Background="#FFECECEC" Opacity="1" CornerRadius="20">
-                    </Border>
-                    <ListView Background="Transparent" x:Name="ListViewMenu" Foreground="#FF081132" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" Opacity="0.8" BorderThickness="0">
-
-                        <ListViewItem x:Name="Account" Height="60" Margin="0,10,0,0">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="10"/>
-                                <TextBlock Text="Account" VerticalAlignment="Center" Margin="20 10" 
+                <Grid>
+                    <Border BorderThickness="1"  Background="#FFECECEC" Opacity="1" CornerRadius="10"  Margin="10,0,0,0" >
+                    
+                    <ListView Background="Transparent" x:Name="ListViewMenu" Foreground="OrangeRed" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                              SelectionChanged="ListViewMenu_SelectionChanged" Opacity="1" BorderThickness="0" ItemsSource="{Binding menuItems}"
+                               >
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:Name="w">
+                                    
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="{Binding icon}" Height="40" Width="40" Margin="5,0,0,0"/>
+                                        <TextBlock Text="{Binding data}" VerticalAlignment="Center" Margin="30 10" 
                                         FontWeight="Bold"
                                         FontFamily="Helvetica"
-                                        FontSize="16"/>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem x:Name="MyProduct" Height="60">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon x:Name="pak" Kind="Storage" Height="25" Width="25" Margin="10"/>
-                                <TextBlock Text="MyProduct" VerticalAlignment="Center" Margin="20 10"
-                                       FontWeight="Bold"
-                                        FontFamily="Helvetica"
-                                        FontSize="16"
-                                       />
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem x:Name="CreateProduct" Height="60">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Create" Height="25" Width="25" Margin="10"/>
-                                <TextBlock Text="Create Product" VerticalAlignment="Center" Margin="20 10"
-                                       FontWeight="Bold"
-                                        FontFamily="Helvetica"
-                                        FontSize="16"
-                                       />
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60" x:Name="History">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="History" Height="25" Width="25" Margin="10"/>
-                                <TextBlock Text="History" VerticalAlignment="Center"  Margin="20 10"
-                                       FontWeight="Bold"
-                                        FontFamily="Helvetica"
-                                        FontSize="16"
-                                       />
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem x:Name="Log_out" Height="60" Margin="0,0,0,10">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ExitToApp" Height="25" Width="25" Margin="10"/>
-                                <TextBlock Text="Log out" VerticalAlignment="Center"  Margin="20 10"
-                                       FontWeight="Bold"
-                                        FontFamily="Helvetica"
-                                        FontSize="16"
-                                       />
-                            </StackPanel>
-                        </ListViewItem>
-                    </ListView>
+                                        FontSize="20"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Border>
                 </Grid>
             </StackPanel>
 

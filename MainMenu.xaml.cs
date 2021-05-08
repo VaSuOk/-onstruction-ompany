@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Сonstruction_сompany.Auxiliary_classes;
 using Сonstruction_сompany.Users_classes;
 
 namespace Сonstruction_сompany
@@ -19,29 +20,11 @@ namespace Сonstruction_сompany
     public partial class MainMenu : Window
     {
         public User manufacturer;
+        public List<Auxiliary_classes.MenuItem> menuItems;
         public MainMenu()
         {
             InitializeComponent();
-            pak.Kind = MaterialDesignThemes.Wpf.PackIconKind.HailTaxi;
-            MyProduct.Name = "Taxi";
-            /*
-            manufacturer = new User(user);
-
-            UserControl usc = null;
-            GridMain.Children.Clear();
-
-            if (manufacturer.InitManufacturer() == 1)
-            {
-                usc = new UserProfileControl(ref manufacturer);
-                GridMain.Children.Add(usc);
-            }
-            else
-            {
-
-                usc = new UserProfileControl(ref manufacturer);
-                GridMain.Children.Add(usc);
-                //init control init data
-            }*/
+            DataContext = new ListItemMenu();
         }
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -61,17 +44,16 @@ namespace Сonstruction_сompany
         {
             UserControl usc = null;
             GridMain.Children.Clear();
-            
-            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            Auxiliary_classes.MenuItem menuItem = ((ListViewItem)((ListView)sender).SelectedItem).Tag as Auxiliary_classes.MenuItem;
+            switch (menuItem.xName)
             {
-                case "Taxi":
-                    pak.Kind = MaterialDesignThemes.Wpf.PackIconKind.Hackernews;
-                    break;
-                /*
-                case "MyProduct":
-                    usc = new ControlMyProducts(manufacturer.ID_Manufacturer, ref GridMain);
+                
+                
+                case "Home":
+                    //usc = new ControlMyProducts(manufacturer.ID_Manufacturer, ref GridMain);
                     GridMain.Children.Add(usc);
-                    break;
+                    //menuItem.data = "rfff";
+                    break;/*
                 case "Account":
                     usc = new UserProfileControl(ref manufacturer);
                     GridMain.Children.Add(usc);
