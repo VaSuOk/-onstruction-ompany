@@ -16,12 +16,25 @@ namespace Сonstruction_сompany
         private UserType userType;
         #endregion
         #region Initialize
+        public Login(UserType userType)
+        {
+            InitializeComponent();
+            this.userType = userType;
+            if(this.userType == UserType.Customer)
+            {
+                Customer.Opacity = 1;
+                Worker.Opacity = 0.5;
+            }
+            else
+            {
+                Customer.Opacity = 0.5;
+                Worker.Opacity = 1;
+            }
+        }
         public Login()
         {
             InitializeComponent();
-            userType = UserType.Unregistered;
-            new MainMenu().Show();
-            this.Close();
+            this.userType = UserType.Unregistered;
         }
         #endregion
         #region Events

@@ -19,30 +19,18 @@ namespace Сonstruction_сompany
     /// </summary>
     public partial class MainInfo : Window
     {
-        public int id;
-        public ItemSlide [] slids;
+        #region Data fields
+        Auxiliary_classes.Slider slider;
+        #endregion
+        #region Constructors
         public MainInfo()
         {
             InitializeComponent();
-            InitSlider();
-            ChangeSlide();
-        }
-        public void InitSlider()
-        {
-            id = 2;
-            slids = new ItemSlide[]
-            {
-                new ItemSlide(1, "D:/KPK/ДИПЛОМ/SOFT/Сonstruction сompany/Source/s4.jpg"),
-                new ItemSlide(2, "D:/KPK/ДИПЛОМ/SOFT/Сonstruction сompany/Source/s3.jpg"),
-                new ItemSlide(3, "D:/KPK/ДИПЛОМ/SOFT/Сonstruction сompany/Source/s2.jpg")
-            };
+            slider = new Auxiliary_classes.Slider(ref slide); 
 
-            string imageName = slids[id-1].image;
-            ImageSourceConverter isc = new ImageSourceConverter();
-            ImageBrush imgbr = new ImageBrush();
-            imgbr.ImageSource = new BitmapImage(new Uri(imageName, UriKind.Absolute));
-            slide.Background = imgbr;
         }
+        #endregion
+        #region Events
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -54,43 +42,24 @@ namespace Сonstruction_сompany
 
         private void BLeft_Click(object sender, RoutedEventArgs e)
         {
-            id--;
-            if(id == 0)
-            {
-                id = slids.Length;
-            }
-            SetSlide();
+            slider.Left_Click(ref slide);
         }
 
         private void BRight_Click(object sender, RoutedEventArgs e)
         {
-            SlideRight();
-            SetSlide();
+            slider.Right_Click(ref slide);
         }
-        private void SlideRight()
+        private void Customer_Click(object sender, RoutedEventArgs e)
         {
-            id++;
-            if (id == slids.Length + 1)
-            {
-                id = 1;
-            }
-            
+            new Login(Users_classes.UserType.Customer).Show();
+            this.Close();
         }
-        private void SetSlide()
+
+        private void Worker_Click(object sender, RoutedEventArgs e)
         {
-            string imageName = slids[id - 1].image;
-            ImageSourceConverter isc = new ImageSourceConverter();
-            ImageBrush imgbr = new ImageBrush();
-            imgbr.ImageSource = new BitmapImage(new Uri(imageName, UriKind.Absolute));
-            slide.Background = imgbr;
+            new Login(Users_classes.UserType.Worker).Show();
+            this.Close();
         }
-        private async void ChangeSlide()
-        {
-            while (true) {
-                await Task.Delay(2000);
-                SlideRight();
-                SetSlide();
-            }
-        }
+        #endregion
     }
 }

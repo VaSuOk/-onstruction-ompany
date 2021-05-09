@@ -28,7 +28,10 @@
                     <RowDefinition Height="330"></RowDefinition>
                     <RowDefinition Height="260"></RowDefinition>
                     <RowDefinition Height="310"></RowDefinition>
-                </Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="460"></RowDefinition>
+                        <RowDefinition Height="160"></RowDefinition>
+                    </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Margin="0">
                         <Border Width="1070" Height="300" CornerRadius="40" x:Name="slide">
                                             <Border.Effect>
@@ -59,14 +62,14 @@
                            FontFamily="Helvetica"
                            FontSize="32"
                            VerticalAlignment="Center"
-                           Foreground="Orange"
+                           Foreground="Gold"
                            HorizontalAlignment="Left">
                                     <TextBlock.Effect>
                                         <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
                                     </TextBlock.Effect>
 
                                 </TextBlock>
-                                <TextBlock Text="4.YOU"
+                                <TextBlock Text="4YOU"
                                     FontWeight="Bold"
                                        FontFamily="Helvetica"
                                        FontSize="32"
@@ -322,6 +325,196 @@
                             </StackPanel>
                         </Border>
                     </StackPanel>
+                    <StackPanel Grid.Row="3" Margin="0,10,0,0">
+                        <Border Width="1070" Height="50" CornerRadius="40" Background="White" Opacity="1" >
+                            <StackPanel>
+                                <TextBlock Text="Можливості"
+                                    Margin="0,10,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="32"
+                                    VerticalAlignment="Center"
+                                    Foreground="OrangeRed"
+                                    HorizontalAlignment="Center">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Margin="120,10,0,0" Orientation="Horizontal">
+                        <Border Width="400" Height="450" CornerRadius="40" Background="White" Opacity="1">
+                        <StackPanel Orientation="Vertical">
+                                <Border Width="300" Height="50" CornerRadius="40" Background="Gold" Opacity="1" Margin="0,5,0,0">
+                                <TextBlock Text="Працівник"
+                                    Margin="0,0,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="30"
+                                    VerticalAlignment="Center"
+                                    Foreground="OrangeRed"
+                                    HorizontalAlignment="Center">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                </Border>
+                                <TextBlock Text=" - Подати робочу анкету"
+                                    Margin="20,10,0,0"
+                                           TextWrapping="Wrap"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="24"
+                                    VerticalAlignment="Center"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <TextBlock Text=" - Зібрати будівельну групу"
+                                    Margin="20,10,0,0"
+                                           TextWrapping="Wrap"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="24"
+                                    VerticalAlignment="Center"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <TextBlock Text=" - Підібрати об'єкт для виконання"
+                                    Margin="20,10,0,0"
+                                           TextWrapping="Wrap"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="24"
+                                    VerticalAlignment="Center"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <TextBlock Text=" - Система звітування замовнику"
+                                    Margin="20,10,0,0"
+                                           TextWrapping="Wrap"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="24"
+                                    VerticalAlignment="Center"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                
+                            </StackPanel>
+                        </Border>
+                        <Border Width="400" Height="450" CornerRadius="40" Background="White" Opacity="1" Margin="50,0,0,0">
+                            <StackPanel Orientation="Vertical">
+                                <Border Width="300" Height="50" CornerRadius="40" Background="Gold" Opacity="1" Margin="0,5,0,0">
+                                    <TextBlock Text="Замовник"
+                                    Margin="0,0,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="30"
+                                    VerticalAlignment="Center"
+                                    Foreground="OrangeRed"
+                                    HorizontalAlignment="Center">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                </Border>
+                                <TextBlock Text=" - Створення замовлення на будівництво об'єкта"
+                                    Margin="20,10,0,0"
+                                           TextWrapping="Wrap"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="24"
+                                    VerticalAlignment="Center"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <TextBlock Text=" - Перегляд стану будівництва"
+                                    Margin="20,10,0,0"
+                                           TextWrapping="Wrap"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="24"
+                                    VerticalAlignment="Center"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <TextBlock Text=" - "
+                                    Margin="20,10,0,0"
+                                           TextWrapping="Wrap"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="24"
+                                    VerticalAlignment="Center"
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5">
+                        <Border  Width="800" Height="150" CornerRadius="40" Background="White" Opacity="1" Margin="0,10,0,0">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Увійти як :"
+                                       Margin="0,0,0,0"
+                                       FontWeight="Bold"
+                                       FontFamily="Helvetica"
+                                       FontSize="32"
+                                       VerticalAlignment="Center"
+                                       Foreground="OrangeRed"
+                                       HorizontalAlignment="Center">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button HorizontalAlignment="Right" 
+                                            Click="Worker_Click"
+                                        Width="150" 
+                                        Height="40"
+                                        Content="Працівник"
+                                        FontSize="26"
+                                        Margin="185,25,30,5"
+                                        
+                                        FontWeight="Bold"
+                                        Name="Worker"
+                                    />
+                                    <Button HorizontalAlignment="Right" 
+                                            Click="Customer_Click"
+                                        Width="150" 
+                                        Height="40"
+                                        Content="Замовник"
+                                        FontSize="26"
+                                        Margin="85,25,30,5"
+                                        
+                                        FontWeight="Bold"
+                                        Name="Customer"
+                                    />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
                 </Grid>
             </ScrollViewer>
                 
@@ -339,14 +532,14 @@
                            FontFamily="Helvetica"
                            FontSize="32"
                            VerticalAlignment="Center"
-                           Foreground="Orange"
+                           Foreground="Gold"
                            HorizontalAlignment="Center">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
                     </TextBlock.Effect>
                         
                 </TextBlock>
-                    <TextBlock Text="4.YOU"
+                    <TextBlock Text="4YOU"
                            FontWeight="Bold"
                            FontFamily="Helvetica"
                            FontSize="32"
