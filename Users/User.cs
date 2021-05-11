@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace Сonstruction_сompany.Users_classes
+namespace Сonstruction_сompany.Users
 {
     public enum UserType
     {
@@ -16,43 +16,32 @@ namespace Сonstruction_сompany.Users_classes
     public class User
     {
         #region Data fields
-        private uint id;
-        private UserType userType;
-        private string PIB;
-        private string Email;
-        private string Phone;
+        protected uint id;
+        protected UserType userType;
+        protected string Name;
+        protected string Surname;
+        protected string Email;
+        protected string Phone;
         #endregion
 
         #region Constructors
-        public User(uint id, UserType userType, string PIB, string Email, string Phone)
+        public User(uint id = 0, UserType userType = UserType.Unregistered,
+            string Name = "", string Surname = "", string Email = "", string Phone = "")
         {
             this.id = id;
             this.userType = userType;
-            this.PIB = PIB;
+            this.Name = Name;
+            this.Surname = Surname;
             this.Email = Email;
             this.Phone = Phone;
         }
-        public User(uint id, UserType userType, string PIB)
-        {
-            this.id = id;
-            this.userType = userType;
-            this.PIB = PIB;
-            this.Email = "";
-            this.Phone = "";
-        }
-        public User()
-        {
-            this.id = 0;
-            this.userType = UserType.Unregistered;
-            this.PIB = "";
-            this.Email = "";
-            this.Phone = "";
-        }
+
         public User(User user)
         {
             this.id = user.id;
             this.userType = user.userType;
-            this.PIB = user.PIB;
+            this.Name = user.Name;
+            this.Surname = user.Surname;
             this.Email = user.Email;
             this.Phone = user.Phone;
         }
@@ -61,15 +50,17 @@ namespace Сonstruction_сompany.Users_classes
         #region Setters and getters
         public uint GetID() { return id; }
         public UserType GetUserType() { return userType; }
-        public string GetPIB() { return PIB; }
+        public string GetName() { return Name; }
+        public string GetSurname() { return Surname; }
         public string GetEmail() { return Email; }
         public string GetPhone() { return Phone; }
-
+        /*  нема потреби їх юзати
         public void SetID(uint id) { this.id = id; }
         public void SetUserType(UserType userType) { this.userType = userType; }
-        public void SetPIB(string PIB) { this.PIB = PIB; }
+        public void SetName(string PIB) { this.PIB = PIB; }
         public void SetEmail(string Email) { this.Email = Email; }
         public void SetPhone(string Phone) { this.Phone = Phone; }
+        */
         #endregion
 
         #region Methods

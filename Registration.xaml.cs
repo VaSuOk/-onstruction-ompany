@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using Сonstruction_сompany.RequestToServer;
-using Сonstruction_сompany.Users_classes;
+using Сonstruction_сompany.Users;
 using static Сonstruction_сompany.Auxiliary_classes.CheckLength;
 namespace Сonstruction_сompany
 {
@@ -15,6 +15,7 @@ namespace Сonstruction_сompany
         #region Data fields
         private UserType userType;
         #endregion
+
         #region Initialize
         public Registration()
         {
@@ -22,6 +23,7 @@ namespace Сonstruction_сompany
             userType = UserType.Unregistered;
         }
         #endregion
+
         #region Events
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -89,7 +91,7 @@ namespace Сonstruction_сompany
                 LogBar.Visibility = Visibility.Hidden;
 
                 string data = String.Format("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}", "registration", userType, NameText.Text, SurnameText.Text, EmailText.Text, PhoneText.Text, LoginText.Text, PasswordText.Password);
-                switch (Request.SendData(data))
+                switch (Request.RequestWithoutReceivingData(data))
                 {
                     case 0:
                         {

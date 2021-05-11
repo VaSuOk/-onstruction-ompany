@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using Сonstruction_сompany.RequestToServer;
-using Сonstruction_сompany.Users_classes;
+using Сonstruction_сompany.Users;
 using static Сonstruction_сompany.Auxiliary_classes.CheckLength;
 namespace Сonstruction_сompany
 {
@@ -15,7 +15,8 @@ namespace Сonstruction_сompany
         #region Data fields
         private UserType userType;
         #endregion
-        #region Initialize
+
+        #region Constructors
         public Login(UserType userType)
         {
             InitializeComponent();
@@ -30,6 +31,8 @@ namespace Сonstruction_сompany
                 Customer.Opacity = 0.5;
                 Worker.Opacity = 1;
             }
+            //
+            
         }
         public Login()
         {
@@ -37,6 +40,7 @@ namespace Сonstruction_сompany
             this.userType = UserType.Unregistered;
         }
         #endregion
+
         #region Events
         //
         private void Customer_Click(object sender, RoutedEventArgs e)
@@ -84,7 +88,7 @@ namespace Сonstruction_сompany
             else
             {
                 string data = String.Format("{0}:{1}:{2}:{3}", "login", userType, LoginText.Text, PasswordText.Password);
-                switch (Request.SendData(data))
+                switch (Request.RequestWithoutReceivingData(data))
                 {
                     case 0:
                         {
@@ -95,6 +99,7 @@ namespace Сonstruction_сompany
                     case 1:
                         {
                             //відкрити потрібне вікно!
+                            new MainMenu(userType).Show();
                             LogBar.Content = "Успішно!";
                             this.Close();
                             break;

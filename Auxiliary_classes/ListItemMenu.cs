@@ -19,7 +19,7 @@ namespace Сonstruction_сompany.Auxiliary_classes
             }
         }
         #endregion
-        #region Constructions
+        #region Constructors
         public ListItemMenu()
         {
             menuItems = new List<MenuItem>();
@@ -32,13 +32,20 @@ namespace Сonstruction_сompany.Auxiliary_classes
             
             menuItems = new List<MenuItem>()
             {
-                new MenuItem("Home", PackIconKind.HomePlus, "Головна сторінка"),
-                new MenuItem("Home", PackIconKind.HomePlus, "Головна сторінка")
+                new MenuItem("Questionnaire", PackIconKind.QuestionAnswer, "Анкета"),
+                new MenuItem("Groups", PackIconKind.Group, "Команда"),
+                new MenuItem("Task", PackIconKind.CalendarTask, "Завдання"),
+                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет")
             };
         }
         public void SetCustomerItemMenu()
         {
-
+            menuItems = new List<MenuItem>()
+            {
+                new MenuItem("Order", PackIconKind.QuestionAnswer, "Замовлення"),
+                new MenuItem(".....", PackIconKind.Add, "......"),
+                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет")
+            };
         }
         #endregion
     }

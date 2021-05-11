@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 
 namespace Сonstruction_сompany.Auxiliary_classes
 {
@@ -10,20 +11,24 @@ namespace Сonstruction_сompany.Auxiliary_classes
         #region Data field
         public string xName { get; }
         public PackIconKind icon { get; }
-        public string data { get; }
+        public string data { get; set; }
+        public UserControl usc { get; }
         #endregion
+
         #region Constructions
         public MenuItem()
         {
             this.xName = "";
-            //this.icon = new PackIconKind();
+            this.icon = PackIconKind.None;
             this.data = "";
+            usc = new UserControl();
         }
-        public MenuItem(string xName, PackIconKind icon, string data)
+        public MenuItem(string xName, PackIconKind icon, string data/*, UserControl usc*/)
         {
             this.xName = xName;
             this.icon = icon;
             this.data = data;
+            //this.usc = usc;
         }
         #endregion
     }

@@ -51,15 +51,16 @@ namespace Сonstruction_сompany
         }
         private void Customer_Click(object sender, RoutedEventArgs e)
         {
-            new Login(Users_classes.UserType.Customer).Show();
+            new Login(Users.UserType.Customer).Show();
             this.Close();
         }
 
         private void Worker_Click(object sender, RoutedEventArgs e)
         {
-            new Login(Users_classes.UserType.Worker).Show();
+            new Login(Users.UserType.Worker).Show();
             this.Close();
         }
         #endregion
+        
     }
 }

@@ -6,11 +6,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Сonstruction_сompany.Auxiliary_classes;
-using Сonstruction_сompany.Users_classes;
+using Сonstruction_сompany.UserControls;
+using Сonstruction_сompany.Users;
 
 namespace Сonstruction_сompany
 {
@@ -19,13 +17,37 @@ namespace Сonstruction_сompany
     /// </summary>
     public partial class MainMenu : Window
     {
-        public User manufacturer;
-        public List<Auxiliary_classes.MenuItem> menuItems;
-        public MainMenu()
+        #region Data fields
+        public User user;
+        private ListItemMenu listItemMenu;
+        #endregion
+
+        #region Constructors
+        public MainMenu(UserType userType)
         {
-            InitializeComponent();
-            DataContext = new ListItemMenu();
+            InitializeComponent();  
+            InitComponentsAndResource(userType);
+
+            UserControl usc = new UserCabinet();
+            GridMain.Children.Clear();
+            GridMain.Children.Add(usc);
         }
+        private void InitComponentsAndResource(UserType userType)
+        {   
+            listItemMenu = new ListItemMenu();
+            user = new User();
+
+            if (userType == UserType.Customer) 
+                listItemMenu.SetCustomerItemMenu();
+            else
+                listItemMenu.SetWorkerItemMenu();
+            TUserType.Text = "." + userType;
+            
+            ListViewMenu.ItemsSource = listItemMenu._MenuItems;
+        }
+        #endregion
+
+        #region Events
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Visible;
@@ -44,41 +66,20 @@ namespace Сonstruction_сompany
         {
             UserControl usc = null;
             GridMain.Children.Clear();
-            Auxiliary_classes.MenuItem menuItem = ((ListViewItem)((ListView)sender).SelectedItem).Tag as Auxiliary_classes.MenuItem;
-            switch (menuItem.xName)
+            
+            var selectedMenuItem = (Auxiliary_classes.MenuItem)((ListView)sender).SelectedItem;
+            if(selectedMenuItem != null)
             {
-                
-                
-                case "Home":
-                    //usc = new ControlMyProducts(manufacturer.ID_Manufacturer, ref GridMain);
-                    GridMain.Children.Add(usc);
-                    //menuItem.data = "rfff";
-                    break;/*
-                case "Account":
-                    usc = new UserProfileControl(ref manufacturer);
-                    GridMain.Children.Add(usc);
-                    break;
-                case "CreateProduct":
-                    usc = new AddProduct(manufacturer.ID_Manufacturer);
-                    GridMain.Children.Add(usc);
-                    break;
-                case "History":
-                    usc = new DateSellProduct(manufacturer.ID_Manufacturer);
-                    GridMain.Children.Add(usc);
-                    break;
-                case "Log_out":
-                    new ULogin().Show();
-                    this.Close();
-                    break;
-                */
-                default:
-                    break;
+                //selectedMenuItem.usc; 
             }
+            
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed) DragMove();
         }
+        #endregion
+
     }
 }

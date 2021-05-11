@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UserControlPanel\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Source\s2.jpg" />
     <Resource Include="Source\s3.jpg" />
     <Resource Include="Source\s4.jpg" />

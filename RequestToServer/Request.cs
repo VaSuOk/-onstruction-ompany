@@ -12,7 +12,7 @@ namespace Сonstruction_сompany.RequestToServer
         private const string address = "127.0.0.1";
         #endregion
         #region Methods
-        public static short SendData(string Data)
+        public static short RequestWithoutReceivingData(string Data)
         {
 
             TcpClient client = null;
