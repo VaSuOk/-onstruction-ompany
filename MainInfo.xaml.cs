@@ -34,6 +34,8 @@ namespace Сonstruction_сompany
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            //ImageSource imageSource = RequestToServer.Request.Test("image");
+            //img.Source = imageSource;
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {

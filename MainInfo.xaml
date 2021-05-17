@@ -33,6 +33,7 @@
                         <RowDefinition Height="160"></RowDefinition>
                     </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Margin="0">
+                        
                         <Border Width="1070" Height="300" CornerRadius="40" x:Name="slide">
                                             <Border.Effect>
                                                 <DropShadowEffect ShadowDepth="1"/>

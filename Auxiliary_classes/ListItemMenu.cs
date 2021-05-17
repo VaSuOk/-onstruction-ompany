@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Сonstruction_сompany.UserControls;
 
 namespace Сonstruction_сompany.Auxiliary_classes
 {
@@ -35,7 +36,7 @@ namespace Сonstruction_сompany.Auxiliary_classes
                 new MenuItem("Questionnaire", PackIconKind.QuestionAnswer, "Анкета"),
                 new MenuItem("Groups", PackIconKind.Group, "Команда"),
                 new MenuItem("Task", PackIconKind.CalendarTask, "Завдання"),
-                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет")
+                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet())
             };
         }
         public void SetCustomerItemMenu()
@@ -44,7 +45,7 @@ namespace Сonstruction_сompany.Auxiliary_classes
             {
                 new MenuItem("Order", PackIconKind.QuestionAnswer, "Замовлення"),
                 new MenuItem(".....", PackIconKind.Add, "......"),
-                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет")
+                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet())
             };
         }
         #endregion

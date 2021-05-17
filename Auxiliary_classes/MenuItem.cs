@@ -23,12 +23,12 @@ namespace Сonstruction_сompany.Auxiliary_classes
             this.data = "";
             usc = new UserControl();
         }
-        public MenuItem(string xName, PackIconKind icon, string data/*, UserControl usc*/)
+        public MenuItem(string xName = "", PackIconKind icon = PackIconKind.CursorDefault, string data = "", UserControl  usc = null)
         {
             this.xName = xName;
             this.icon = icon;
             this.data = data;
-            //this.usc = usc;
+            this.usc = usc;
         }
         #endregion
     }

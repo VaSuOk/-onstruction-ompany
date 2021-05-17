@@ -11,7 +11,7 @@
             <StackPanel Orientation="Vertical" Margin="50,20,0,0">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel >
-                        <Border  x:Name="Bimg" Width="200" Height="200" CornerRadius="10" Margin="0,0,0,0" 
+                        <Border  x:Name="BImg" Width="200" Height="200" CornerRadius="10" Margin="0,0,0,0" 
                         BorderThickness="2"
                         BorderBrush="#FF081132"
                         >
@@ -22,6 +22,12 @@
                                 <ImageBrush  ImageSource="{Binding image}"/>
                             </Border.Background>
                         </Border>
+                        <Button Opacity="0" Width="120" Height="40" MouseEnter="BImage_MouseEnter" MouseLeave="BImage_MouseLeave"
+                                Content="ЗМІНИТИ" Margin="0,-60,0,0" x:Name ="BImage" Click="BImage_Click" Cursor="Hand" >
+                            <Button.Effect>
+                                <DropShadowEffect BlurRadius="1" ShadowDepth="3" />
+                            </Button.Effect>
+                        </Button>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
@@ -43,6 +49,13 @@
                                         <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
                                     </TextBox.Effect>
                                 </TextBox>
+                                <Border x:Name="BName"
+                            HorizontalAlignment="Left"
+                            Margin="30,0,0,0"
+                            Width="200"
+                            Height="2"
+                            Background="White"
+                            Opacity="1"/>
                                 <StackPanel Orientation="Horizontal" x:Name="SName" Visibility="Visible">
                                     <iconPacks:PackIconMaterial Kind="AccountEdit" 
                                         Height="20"
@@ -83,6 +96,13 @@
                                         <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
                                     </TextBox.Effect>
                                 </TextBox>
+                                <Border x:Name="BSurname"
+                            HorizontalAlignment="Left"
+                            Margin="30,0,0,0"
+                            Width="200"
+                            Height="2"
+                            Background="White"
+                            Opacity="1"/>
                                 <StackPanel Orientation="Horizontal" x:Name="SSurname" Visibility="Visible">
                                     <iconPacks:PackIconMaterial Kind="AccountEdit" 
                                         Height="20"
@@ -103,9 +123,275 @@
                                     </Label>
 
                                 </StackPanel>
+                                
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Margin="90,0,0,0">
+                                
+
+
                             </StackPanel>
 
                         </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox x:Name="CAge" Width="65" Height="40" HorizontalAlignment="Left" Margin="40,20,0,0" ItemsSource="{Binding age}"
+                                      FontFamily="Helvetica"
+                                    FontSize="32"
+                                      FontWeight="Bold"
+                                       Foreground="Orange"
+                                    BorderThickness="0"
+                                      ></ComboBox>
+                        </StackPanel>
+                        <StackPanel x:Name="SAge" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,0">
+                            
+                            <Label
+                                        Content="Вік"
+                                        FontFamily="Helvetica"
+                                        FontSize="16" 
+                                        FontWeight="Bold"
+                                Margin="50,0,0,0"
+                                        Foreground="Orange">
+                                <Label.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                </Label.Effect>
+                            </Label>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
+                        <StackPanel Orientation="Vertical" >
+                            <TextBox Text="Email             "
+                                    x:Name="TEmail"
+                                    Focusable="False"
+                                    Margin="0,20,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="32"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    VerticalAlignment="Center"
+                                    
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                <TextBox.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                </TextBox.Effect>
+                            </TextBox>
+                            <Border x:Name="BEmail"
+                            HorizontalAlignment="Left"
+                            Margin="0,0,0,0"
+                            Width="200"
+                            Height="2"
+                            Background="White"
+                            Opacity="1"/>
+                            <StackPanel Orientation="Horizontal" x:Name="SEmail" Visibility="Visible">
+                                <iconPacks:PackIconMaterial Kind="Email" 
+                                        Height="20"
+                                        Width="20"
+                                        Margin="40,0,0,0"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="Orange"/>
+                                <Label
+                                        Content="Пошта"
+                                        FontFamily="Helvetica"
+                                        FontSize="16" 
+                                        FontWeight="Bold"
+                                        Foreground="Orange">
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </Label.Effect>
+                                </Label>
+
+                            </StackPanel>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" >
+                            <TextBox Text="Phone             "
+                                    x:Name="TPhone"
+                                    Focusable="False"
+                                    Margin="20,20,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="32"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    VerticalAlignment="Center"
+                                    
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                <TextBox.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                </TextBox.Effect>
+                            </TextBox>
+                            <Border x:Name="BPhone"
+                            HorizontalAlignment="Left"
+                            Margin="20,0,0,0"
+                            Width="200"
+                            Height="2"
+                            Background="White"
+                            Opacity="1"/>
+                            <StackPanel Orientation="Horizontal" x:Name="SPhone" Visibility="Visible">
+                                <iconPacks:PackIconMaterial Kind="Phone" 
+                                        Height="20"
+                                        Width="20"
+                                        Margin="40,0,0,0"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="Orange"/>
+                                <Label
+                                        Content="Телефон"
+                                        FontFamily="Helvetica"
+                                        FontSize="16" 
+                                        FontWeight="Bold"
+                                        Foreground="Orange">
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </Label.Effect>
+                                </Label>
+
+                            </StackPanel>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" >
+                            <TextBox Text="Sity"
+                                    x:Name="TSity"
+                                    Focusable="False"
+                                    Margin="20,20,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="32"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    VerticalAlignment="Center"
+                                    
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                <TextBox.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                </TextBox.Effect>
+                            </TextBox>
+                            <Border x:Name="BSity"
+                            HorizontalAlignment="Left"
+                            Margin="20,0,0,0"
+                            Width="200"
+                            Height="2"
+                            Background="White"
+                            Opacity="1"/>
+                            <StackPanel Orientation="Horizontal" x:Name="SSity" Visibility="Visible">
+                                <iconPacks:PackIconMaterial Kind="OfficeBuilding" 
+                                        Height="20"
+                                        Width="20"
+                                        Margin="40,0,0,0"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="Orange"/>
+                                <Label
+                                        Content="Місто"
+                                        FontFamily="Helvetica"
+                                        FontSize="16" 
+                                        FontWeight="Bold"
+                                        Foreground="Orange">
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </Label.Effect>
+                                </Label>
+
+                            </StackPanel>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" >
+                            <TextBox Text="Region"
+                                    x:Name="TRegion"
+                                    Focusable="False"
+                                    Margin="20,20,0,0"
+                                    FontWeight="Bold"
+                                    FontFamily="Helvetica"
+                                    FontSize="32"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    VerticalAlignment="Center"
+                                    
+                                    Foreground="Orange"
+                                    HorizontalAlignment="Left">
+                                <TextBox.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                </TextBox.Effect>
+                            </TextBox>
+                            <Border x:Name="BRegion"
+                            HorizontalAlignment="Left"
+                            Margin="20,0,0,0"
+                            Width="200"
+                            Height="2"
+                            Background="White"
+                            Opacity="1"/>
+                            <StackPanel Orientation="Horizontal" x:Name="SRegion" Visibility="Visible">
+                                <iconPacks:PackIconMaterial Kind="OfficeBuilding" 
+                                        Height="20"
+                                        Width="20"
+                                        Margin="40,0,0,0"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="Orange"/>
+                                <Label
+                                        Content="Область"
+                                        FontFamily="Helvetica"
+                                        FontSize="16" 
+                                        FontWeight="Bold"
+                                        Foreground="Orange">
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </Label.Effect>
+                                </Label>
+
+                            </StackPanel>
+
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="460,60,0,0">
+                        <iconPacks:PackIconMaterial Kind="ContentSave" 
+                                        Height="40"
+                                        Width="40"
+                                        Margin="0,0,10,0"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="Orange"/>
+                        <Button Width="120" Height="40" Content="ЗБЕРЕГТИ" Margin="0,0,60,0" x:Name ="BSave" Click="BSave_Click" Cursor="Hand">
+                            <Button.Effect>
+                                <DropShadowEffect BlurRadius="1" ShadowDepth="3" />
+                            </Button.Effect>
+                        </Button>
+                        <iconPacks:PackIconMaterial Kind="CommentEdit" 
+                                        Height="40"
+                                        Width="40"
+                                        Margin="0,0,10,0"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="Orange"/>
+                        <Button x:Name="BEdit" Width="120" Height="40" Content="РЕДАГУВАТИ" Click="BEdit_Click" Cursor="Hand" IsCancel="True">
+                            <Button.Effect>
+                                <DropShadowEffect BlurRadius="1" ShadowDepth="3" />
+                            </Button.Effect>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel>
+                        <Border CornerRadius="10" Grid.RowSpan="2" Background="White" Margin="0, 35, 10,10" Opacity="1" Height="30" Width="800">
+                            <StackPanel Orientation="Vertical" Height="30" Background="Transparent">
+
+                                <Label Width="700"
+                                    VerticalAlignment="Bottom" 
+                                    HorizontalAlignment="Center" 
+                                    FontFamily="Helvetica"
+                                    Name="LogBar"
+                                    Visibility="Hidden"
+                                    Content="Tefdsfsfs"
+                                    FontSize="16"
+                                    FontWeight="Bold"
+                                    Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                           
+                                />
+                            </StackPanel>
+                        </Border>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

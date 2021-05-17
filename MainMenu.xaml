@@ -90,6 +90,11 @@
                 
 
             </Border>
+            <Button Width="120" Height="40" Content="ВИЙТИ" Margin="790,0,0,0" x:Name ="BLogout" Click="BLogout_Click" Cursor="Hand" Visibility="Hidden">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="1" ShadowDepth="1" />
+                </Button.Effect>
+            </Button>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button HorizontalAlignment="Right" 
                             Width="40" 

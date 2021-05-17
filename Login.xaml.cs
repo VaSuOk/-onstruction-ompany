@@ -88,7 +88,7 @@ namespace Сonstruction_сompany
             else
             {
                 string data = String.Format("{0}:{1}:{2}:{3}", "login", userType, LoginText.Text, PasswordText.Password);
-                switch (Request.RequestWithoutReceivingData(data))
+                switch (Request.Get_Instance().RequestWithoutReceivingData(data))
                 {
                     case 0:
                         {
