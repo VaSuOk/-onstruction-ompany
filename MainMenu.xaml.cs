@@ -24,24 +24,22 @@ namespace Сonstruction_сompany
         #endregion
 
         #region Constructors
-        public MainMenu(UserType userType)
+        public MainMenu(UserType userType, int ID)
         {
-            InitializeComponent();  
-            InitComponentsAndResource(userType);
-
-            UserControl usc = new UserCabinet();
+            InitializeComponent();
             GridMain.Children.Clear();
-            GridMain.Children.Add(usc);
+            GridMain.Children.Add(new QuestionnairesControl(ref GridMain));
+            //user = HttpUserRequest.GetUserByID(ID);
+            //InitComponentsAndResource(userType);
         }
         private void InitComponentsAndResource(UserType userType)
         {   
             listItemMenu = new ListItemMenu();
-            user = new User();
 
             if (userType == UserType.Customer) 
-                listItemMenu.SetCustomerItemMenu();
+                listItemMenu.SetCustomerItemMenu(ref user);
             else
-                listItemMenu.SetWorkerItemMenu();
+                listItemMenu.SetWorkerItemMenu(ref user);
             TUserType.Text = "." + userType;
             
             ListViewMenu.ItemsSource = listItemMenu._MenuItems;
@@ -89,7 +87,6 @@ namespace Сonstruction_сompany
         private void BLogout_Click(object sender, RoutedEventArgs e)
         {
             string data = String.Format("{0}", "logout");
-            Request.Get_Instance().GetUserInfo(data);
             new Login().Show();
             this.Close();
         }

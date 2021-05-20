@@ -21,9 +21,9 @@ namespace Сonstruction_сompany.Auxiliary_classes
             this.xName = "";
             this.icon = PackIconKind.None;
             this.data = "";
-            usc = new UserControl();
+            usc = null;
         }
-        public MenuItem(string xName = "", PackIconKind icon = PackIconKind.CursorDefault, string data = "", UserControl  usc = null)
+        public MenuItem(string xName = "", PackIconKind icon = PackIconKind.None, string data = "", UserControl  usc = null)
         {
             this.xName = xName;
             this.icon = icon;

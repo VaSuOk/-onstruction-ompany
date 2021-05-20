@@ -85,31 +85,40 @@ namespace Сonstruction_сompany
                 LogBar.Content = "Оберіть тип користувача!";
                 LogBar.Visibility = Visibility.Visible;
             }
-            else
+            else if(LoginText.Text.Length  >= 6 && PasswordText.Password.Length >=6 && LoginText.Text.Length <=18 && PasswordText.Password.Length <=18)
             {
-                string data = String.Format("{0}:{1}:{2}:{3}", "login", userType, LoginText.Text, PasswordText.Password);
-                switch (Request.Get_Instance().RequestWithoutReceivingData(data))
+                int id = HttpUserRequest.LoginUser(userType, LoginText.Text, PasswordText.Password);
+
+                if (id <= 0) {
+                    switch (id)
+                    {
+                        case 0:
+                            {
+                                LogBar.Content = "Невірний логін, або пароль!";
+                                LogBar.Visibility = Visibility.Visible;
+                                break;
+                            }
+                        case -2:
+                            {
+                                //відкрити потрібне вікно!
+                                LogBar.Content = "Відсутнє з'єднання з сервером!";
+                                LogBar.Visibility = Visibility.Visible;
+                                
+                                break;
+                            }
+                        case -1:
+                            {
+                                LogBar.Content = "Відсутнє з'єднання з базою даних!";
+                                LogBar.Visibility = Visibility.Visible;
+                                break;
+                            }
+                    }
+                }
+                else
                 {
-                    case 0:
-                        {
-                            LogBar.Content = "Невірний логін, або пароль!";
-                            LogBar.Visibility = Visibility.Visible;
-                            break;
-                        }
-                    case 1:
-                        {
-                            //відкрити потрібне вікно!
-                            new MainMenu(userType).Show();
-                            LogBar.Content = "Успішно!";
-                            this.Close();
-                            break;
-                        }
-                    case -1:
-                        {
-                            LogBar.Content = "Відсутнє з'єднання з сервером!";
-                            LogBar.Visibility = Visibility.Visible;
-                            break;
-                        }
+                    new MainMenu(userType, id).Show();
+                    LogBar.Content = "Успішно!";
+                    this.Close();
                 }
             }
 

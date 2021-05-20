@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Сonstruction_сompany.UserControls;
+using Сonstruction_сompany.Users;
 
 namespace Сonstruction_сompany.Auxiliary_classes
 {
@@ -24,11 +25,10 @@ namespace Сonstruction_сompany.Auxiliary_classes
         public ListItemMenu()
         {
             menuItems = new List<MenuItem>();
-            SetWorkerItemMenu();
         }
         #endregion
         #region Methods
-        public void SetWorkerItemMenu()
+        public void SetWorkerItemMenu(ref User user)
         {
             
             menuItems = new List<MenuItem>()
@@ -36,16 +36,16 @@ namespace Сonstruction_сompany.Auxiliary_classes
                 new MenuItem("Questionnaire", PackIconKind.QuestionAnswer, "Анкета"),
                 new MenuItem("Groups", PackIconKind.Group, "Команда"),
                 new MenuItem("Task", PackIconKind.CalendarTask, "Завдання"),
-                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet())
+                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet(ref user))
             };
         }
-        public void SetCustomerItemMenu()
+        public void SetCustomerItemMenu(ref User user)
         {
             menuItems = new List<MenuItem>()
             {
                 new MenuItem("Order", PackIconKind.QuestionAnswer, "Замовлення"),
                 new MenuItem(".....", PackIconKind.Add, "......"),
-                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet())
+                new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet(ref user))
             };
         }
         #endregion

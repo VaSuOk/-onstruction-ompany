@@ -25,6 +25,8 @@ namespace Сonstruction_сompany
         #region Constructors
         public MainInfo()
         {
+            new MainMenu(Users.UserType.Worker, 1).Show(); 
+            this.Close();
             InitializeComponent();
             slider = new Auxiliary_classes.Slider(ref slide); 
 
@@ -34,8 +36,6 @@ namespace Сonstruction_сompany
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            //ImageSource imageSource = RequestToServer.Request.Test("image");
-            //img.Source = imageSource;
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {

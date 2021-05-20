@@ -91,7 +91,7 @@ namespace Сonstruction_сompany
                 LogBar.Visibility = Visibility.Hidden;
 
                 string data = String.Format("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}", "registration", userType, NameText.Text, SurnameText.Text, EmailText.Text, PhoneText.Text, LoginText.Text, PasswordText.Password);
-                switch (Request.Get_Instance().RequestWithoutReceivingData(data))
+                switch (1)
                 {
                     case 0:
                         {

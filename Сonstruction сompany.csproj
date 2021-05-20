@@ -8,22 +8,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Source\dax.jpg" />
+    <None Remove="Source\fon.jpg" />
+    <None Remove="Source\fundament.jpg" />
     <None Remove="Source\s2.jpg" />
     <None Remove="Source\s3.jpg" />
     <None Remove="Source\s4.jpg" />
+    <None Remove="Source\stina.jpg" />
+    <None Remove="Source\vnytrszovns.jpg" />
+    <None Remove="Source\додати.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.8.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
     <PackageReference Include="MySql.Data" Version="8.0.24" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Source\dax.jpg" />
+    <Resource Include="Source\fon.jpg" />
+    <Resource Include="Source\fundament.jpg" />
     <Resource Include="Source\s2.jpg" />
     <Resource Include="Source\s3.jpg" />
     <Resource Include="Source\s4.jpg" />
+    <Resource Include="Source\stina.jpg" />
+    <Resource Include="Source\vnytrszovns.jpg" />
+    <Resource Include="Source\додати.jpg" />
   </ItemGroup>
 
 </Project>

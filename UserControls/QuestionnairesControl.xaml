@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="Сonstruction_сompany.UserControls.QuestionnairesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Сonstruction_сompany.UserControls" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="550" d:DesignWidth="1020">
+    <Grid x:Name="GUserCabinet" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="1020" Margin="0,0,0,0">
+        <Border Background="White" Opacity="0.98" BorderBrush="Transparent" BorderThickness="10" CornerRadius="40" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <StackPanel>
+                <ScrollViewer Grid.Row="1" Background="Transparent" Height="500" VerticalScrollBarVisibility="Hidden" Margin="20,10,0,0" >
+                    <StackPanel>
+
+
+                        <StackPanel Margin="21 0">
+                            
+                            <ItemsControl x:Name="ListViewQuest" ItemsSource="{Binding questionnaireViews}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+
+                                        <Border Margin="0,10,0,0" Width="200" Height="200" CornerRadius ="40" BorderThickness="5" BorderBrush="Black" PreviewMouseDown="Border_PreviewMouseDown">
+                                            
+                                            <StackPanel>
+
+                                                <Border Width="190" Height="130" CornerRadius="40" Margin="0">
+                                                    <Border.Effect>
+                                                        <DropShadowEffect ShadowDepth="1"/>
+                                                    </Border.Effect>
+                                                    <Border.Background>
+                                                        <ImageBrush ImageSource="{Binding image}"  Stretch="Fill" />
+                                                    </Border.Background>
+                                                </Border>
+                                                <StackPanel  Orientation="Horizontal">
+                                                    <iconPacks:PackIconMaterial Kind="Circle" 
+                                                        Height="10"
+                                                        Width="10"
+                                                        Margin="37,0,0,0"
+                                                        VerticalAlignment="Center" 
+                                                        HorizontalAlignment="Center" 
+                                                        Foreground="{Binding brush}"/>
+                                                    <TextBox Text="{Binding status}"
+                                                        x:Name="TStatus"
+                                                        Focusable="False"
+                                                        Margin="0,0,0,0"
+                                                        FontWeight="Bold"
+                                                        FontFamily="Helvetica"
+                                                        FontSize="20"
+                                                        BorderThickness="0"
+                                                        Background="Transparent"
+                                                        VerticalAlignment="Center"
+                                    
+                                                        Foreground="Orange"
+                                                        HorizontalAlignment="Center">
+                                                        <TextBox.Effect>
+                                                            <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                        </TextBox.Effect>
+                                                    </TextBox>
+                                                </StackPanel>
+                                                <TextBox Text="{Binding Position}"
+                                                         
+                                                        x:Name="TPosition"
+                                                        Focusable="False"
+                                                        Margin="0,0,0,0"
+                                                        FontWeight="Bold"
+                                                        FontFamily="Helvetica"
+                                                        FontSize="20"
+                                                        BorderThickness="0"
+                                                        Background="Transparent"
+                                                        VerticalAlignment="Center"
+                                    
+                                                        Foreground="Orange"
+                                                        HorizontalAlignment="Center">
+                                                    <TextBox.Effect>
+                                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                    </TextBox.Effect>
+                                                </TextBox>
+
+
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
+

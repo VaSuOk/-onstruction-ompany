@@ -7,7 +7,7 @@
              mc:Ignorable="d" Background="Transparent"
              d:DesignHeight="550" d:DesignWidth="1020">
     <Grid x:Name="GUserCabinet" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="1020" Margin="0,0,0,0">
-        <Border Background="#FFECECEC" Opacity="0.9" BorderBrush="Transparent" BorderThickness="10" CornerRadius="40" Grid.ColumnSpan="3" Grid.RowSpan="3">
+        <Border Background="White" Opacity="0.98" BorderBrush="Transparent" BorderThickness="10" CornerRadius="40" Grid.ColumnSpan="3" Grid.RowSpan="3">
             <StackPanel Orientation="Vertical" Margin="50,20,0,0">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel >
@@ -19,7 +19,7 @@
                                 <DropShadowEffect ShadowDepth="1"/>
                             </Border.Effect>
                             <Border.Background>
-                                <ImageBrush  ImageSource="{Binding image}"/>
+                                <ImageBrush  ImageSource="{Binding image}" Stretch="UniformToFill"/>
                             </Border.Background>
                         </Border>
                         <Button Opacity="0" Width="120" Height="40" MouseEnter="BImage_MouseEnter" MouseLeave="BImage_MouseLeave"
@@ -56,7 +56,7 @@
                             Height="2"
                             Background="White"
                             Opacity="1"/>
-                                <StackPanel Orientation="Horizontal" x:Name="SName" Visibility="Visible">
+                                <StackPanel Orientation="Horizontal" x:Name="SName" Visibility="Hidden">
                                     <iconPacks:PackIconMaterial Kind="AccountEdit" 
                                         Height="20"
                                         Width="20"
@@ -103,7 +103,7 @@
                             Height="2"
                             Background="White"
                             Opacity="1"/>
-                                <StackPanel Orientation="Horizontal" x:Name="SSurname" Visibility="Visible">
+                                <StackPanel Orientation="Horizontal" x:Name="SSurname" Visibility="Hidden">
                                     <iconPacks:PackIconMaterial Kind="AccountEdit" 
                                         Height="20"
                                         Width="20"
@@ -134,6 +134,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <ComboBox x:Name="CAge" Width="65" Height="40" HorizontalAlignment="Left" Margin="40,20,0,0" ItemsSource="{Binding age}"
+                                      
                                       FontFamily="Helvetica"
                                     FontSize="32"
                                       FontWeight="Bold"
@@ -141,7 +142,7 @@
                                     BorderThickness="0"
                                       ></ComboBox>
                         </StackPanel>
-                        <StackPanel x:Name="SAge" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,0">
+                        <StackPanel x:Name="SAge" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Hidden">
                             
                             <Label
                                         Content="Вік"
@@ -184,7 +185,7 @@
                             Height="2"
                             Background="White"
                             Opacity="1"/>
-                            <StackPanel Orientation="Horizontal" x:Name="SEmail" Visibility="Visible">
+                            <StackPanel Orientation="Horizontal" x:Name="SEmail" Visibility="Hidden">
                                 <iconPacks:PackIconMaterial Kind="Email" 
                                         Height="20"
                                         Width="20"
@@ -231,7 +232,7 @@
                             Height="2"
                             Background="White"
                             Opacity="1"/>
-                            <StackPanel Orientation="Horizontal" x:Name="SPhone" Visibility="Visible">
+                            <StackPanel Orientation="Horizontal" x:Name="SPhone" Visibility="Hidden">
                                 <iconPacks:PackIconMaterial Kind="Phone" 
                                         Height="20"
                                         Width="20"
@@ -278,7 +279,7 @@
                             Height="2"
                             Background="White"
                             Opacity="1"/>
-                            <StackPanel Orientation="Horizontal" x:Name="SSity" Visibility="Visible">
+                            <StackPanel Orientation="Horizontal" x:Name="SSity" Visibility="Hidden">
                                 <iconPacks:PackIconMaterial Kind="OfficeBuilding" 
                                         Height="20"
                                         Width="20"
@@ -325,7 +326,7 @@
                             Height="2"
                             Background="White"
                             Opacity="1"/>
-                            <StackPanel Orientation="Horizontal" x:Name="SRegion" Visibility="Visible">
+                            <StackPanel Orientation="Horizontal" x:Name="SRegion" Visibility="Hidden">
                                 <iconPacks:PackIconMaterial Kind="OfficeBuilding" 
                                         Height="20"
                                         Width="20"
