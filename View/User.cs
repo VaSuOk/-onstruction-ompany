@@ -26,6 +26,7 @@ namespace Сonstruction_сompany.Users
         public string Region { get; set; }
         public string Sity { get; set; }
         public byte[] UserImage { get; set; }
+        public uint Age { get; set; }
         #endregion
 
     }

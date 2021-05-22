@@ -11,6 +11,7 @@
     <None Remove="Source\dax.jpg" />
     <None Remove="Source\fon.jpg" />
     <None Remove="Source\fundament.jpg" />
+    <None Remove="Source\fundament.png" />
     <None Remove="Source\s2.jpg" />
     <None Remove="Source\s3.jpg" />
     <None Remove="Source\s4.jpg" />
@@ -31,6 +32,7 @@
     <Resource Include="Source\dax.jpg" />
     <Resource Include="Source\fon.jpg" />
     <Resource Include="Source\fundament.jpg" />
+    <Resource Include="Source\fundament.png" />
     <Resource Include="Source\s2.jpg" />
     <Resource Include="Source\s3.jpg" />
     <Resource Include="Source\s4.jpg" />
