@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Сonstruction_сompany.Auxiliary_classes;
+using Сonstruction_сompany.RequestToServer;
 using Сonstruction_сompany.View;
 
 namespace Сonstruction_сompany.UserControls
@@ -23,15 +24,24 @@ namespace Сonstruction_сompany.UserControls
     public partial class CreateQuestionnaire : UserControl
     {
         private string strName, imageName, position;
-        private int stage;
+        private Stage stage;
         private Regions WRegions;
         private Regions LRegions;
+        private Questionnaire questionnaire;
+        private UserAge userAge;
+
         public CreateQuestionnaire(User user = null)
         {
+            InitializeComponent();
+            InitData(user);
+
+            userAge = new UserAge();
+            questionnaire = new Questionnaire();
             WRegions = new Regions();
             LRegions = new Regions();
 
-            InitializeComponent();
+            this.questionnaire.user = user;
+            CAge.ItemsSource = userAge.Age;
 
             WRegions.AddRegionTypeAll();
             WRegion.ItemsSource = WRegions.regions;
@@ -41,12 +51,13 @@ namespace Сonstruction_сompany.UserControls
         {
             if (user != null)
             {
-                TName.Text = user.Name;
+                TName.Text = user.Name + user.id;
                 TSurname.Text = user.Surname;
                 TEmail.Text = user.Email;
                 TPhone.Text = user.Phone;
-                //TRegion.Text = user.Region;
+                LRegion.SelectedItem = user.Region;
                 TSity.Text = user.Sity;
+                CAge.SelectedItem = (int) user.Age;
 
                 var imageSource = new BitmapImage();
                 MemoryStream ms;
@@ -113,6 +124,7 @@ namespace Сonstruction_сompany.UserControls
             BSupp2.Content = "СТОЛЯР";
             BSupp3.Visibility = Visibility.Visible;
             BSupp3.Content = "ПОМІЧНИК";
+            stage = Stage.ProcessingInside;
         }
         private void SetClik(Border border)
         {
@@ -141,6 +153,7 @@ namespace Сonstruction_сompany.UserControls
             Bsupp.Content = "ПІДСОБНИК";
             BSupp3.Visibility = Visibility.Collapsed;
             BSupp2.Visibility = Visibility.Collapsed;
+            stage = Stage.Construction;
         }
 
         private void BDax_MouseDown(object sender, MouseButtonEventArgs e)
@@ -152,6 +165,7 @@ namespace Сonstruction_сompany.UserControls
             BSupp2.Visibility = Visibility.Visible;
             BSupp2.Content = "ПОМІЧНИК";
             BSupp3.Visibility = Visibility.Collapsed;
+            stage = Stage.Roofing;
         }
 
         private void BFundament_MouseDown(object sender, MouseButtonEventArgs e)
@@ -162,6 +176,7 @@ namespace Сonstruction_сompany.UserControls
             Bsupp.Content = "ПОМІЧНИК";
             BSupp3.Visibility = Visibility.Collapsed;
             BSupp2.Visibility = Visibility.Collapsed;
+            stage = Stage.Earthwork;
         }
         private void SetOpasityButton(Button button, Button button1, Button button2)
         {
@@ -188,6 +203,36 @@ namespace Сonstruction_сompany.UserControls
             BSupp2.Opacity = 1;
             SetOpasityButton(BMain, Bsupp, BSupp3);
             position = BSupp2.Content.ToString();
+        }
+
+        private void Wmadin_Click(object sender, RoutedEventArgs e)
+        {
+            //перевірка!!!!
+
+            //мейн
+            if (imageName != null)
+            {
+                FileStream fs = new FileStream(imageName, FileMode.Open, FileAccess.Read);
+                byte[] imgByteArr = new byte[fs.Length];
+                fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+                
+                questionnaire.user.UserImage = imgByteArr;
+            }
+            questionnaire.ID = 0;
+            questionnaire.user.Name = TName.Text; questionnaire.user.Surname = TSurname.Text; 
+            questionnaire.user.Email = TEmail.Text; questionnaire.user.Phone = TPhone.Text;
+            questionnaire.user.Region = WRegion.Text; questionnaire.user.Sity = TSity.Text; 
+            questionnaire.user.Age = Convert.ToUInt32(CAge.Text);
+            
+
+            questionnaire.Position = position;
+            questionnaire.stage = stage;
+            questionnaire.RegionOfWork = WRegion.Text;
+            questionnaire.Salary = Convert.ToDouble(TSalary.Text);
+
+            //відправка даних
+            HttpQuestionnaireRequest.CreateQuestionnaire(questionnaire);
         }
 
         private void BSupp3_Click(object sender, RoutedEventArgs e)

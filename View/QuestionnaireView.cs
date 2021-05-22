@@ -14,13 +14,41 @@ namespace Сonstruction_сompany.View
         public string Position { get; set; }
         public ImageSource image { get; set; }
         private string nimg;
+        public string Status { get; set; }
+
         public System.Windows.Media.Brush brush { get; set; }
+
+        public static Stage ConvertToEnumQ(string UEnum)
+        {
+            switch (UEnum)
+            {
+                case "Earthwork":
+                    {
+                        return Stage.Earthwork;
+                    }
+                case "Construction":
+                    {
+                        return Stage.Construction;
+                    }
+                case "Roofing":
+                    {
+                        return Stage.Roofing;
+                    }
+                case "ProcessingInside":
+                    {
+                        return Stage.ProcessingInside;
+                    }
+                default: return Stage.Unknow;
+            }
+        }
 
         public QuestionnaireView(Questionnaire questionnaire)
         {
             if(questionnaire != null)
             {
+                Status = questionnaire.stage.ToString();
                 Position = questionnaire.Position;
+
                 if (questionnaire.stage == Stage.Earthwork)
                     nimg = @"D:\KPK\ДИПЛОМ\SOFT\Сonstruction сompany\Source\fundament.png";
                 else if (questionnaire.stage == Stage.Construction)
@@ -32,13 +60,14 @@ namespace Сonstruction_сompany.View
                 if (questionnaire.activated)
                     brush = System.Windows.Media.Brushes.Green;
                 else
-                    brush = System.Windows.Media.Brushes.White;
+                    brush = System.Windows.Media.Brushes.Red;
             }
             else
             {
-                Position = "Створити";
+                Status = "Cтворити";
+                Position = "нову анкету";
                 nimg = @"D:\KPK\ДИПЛОМ\SOFT\Сonstruction сompany\Source\додати.jpg";
-                brush = System.Windows.Media.Brushes.Red;
+                brush = System.Windows.Media.Brushes.Transparent;
             }
             var imageSource = new BitmapImage();
             MemoryStream ms;

@@ -9,8 +9,8 @@ namespace Сonstruction_сompany.View
         Earthwork,
         Construction,
         Roofing,
-        ProcessingInside
-
+        ProcessingInside,
+        Unknow
     }
     public class Questionnaire
     {
@@ -19,6 +19,7 @@ namespace Сonstruction_сompany.View
         public Stage stage { get; set; }
         public string Position { get; set; }
         public string RegionOfWork { get; set; }
+        public double Salary { get; set; }
         public bool activated { get; set; }
         public bool confirmed { get; set; }
     }

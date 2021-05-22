@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Сonstruction_сompany.Auxiliary_classes;
 using Сonstruction_сompany.RequestToServer;
 using Сonstruction_сompany.View;
 
@@ -23,15 +24,14 @@ namespace Сonstruction_сompany.UserControls
     public partial class UserCabinet : UserControl
     {
         private User user;
-        private int[] age;
         private string imageName, strName;
+        private UserAge userAge;
         public UserCabinet(ref User user)
         {
+            userAge = new UserAge();
             InitializeComponent();
-            age = new int[] { 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
-                33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                51, 52, 53, 54, 55, 56, 57, 58, 59, 60 };
-            CAge.ItemsSource = age;
+
+            CAge.ItemsSource = userAge.Age;
             this.user = user;
             if (user != null)
                 InitUserData();
@@ -46,6 +46,7 @@ namespace Сonstruction_сompany.UserControls
                 TPhone.Text = user.Phone;
                 TRegion.Text = user.Region;
                 TSity.Text = user.Sity;
+                CAge.SelectedItem = (int) user.Age;
 
                 var imageSource = new BitmapImage();
                 MemoryStream ms;
@@ -81,19 +82,23 @@ namespace Сonstruction_сompany.UserControls
         {
             SetHiddenTips();
             SetUneditFields();
-            SendDataAsync();
+            SendData();
         }
        
-        private async System.Threading.Tasks.Task SendDataAsync()
+        private void SendData()
         {
-            FileStream fs = new FileStream(imageName, FileMode.Open, FileAccess.Read);
-            byte[] imgByteArr = new byte[fs.Length];
-            fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
-            fs.Close();
-
-            user.Name = TName.Text; user.Surname = TSurname.Text; user.Email = TEmail.Text;
-            user.Phone = TPhone.Text; user.Region = TRegion.Text; user.Sity = TSity.Text; user.UserImage = imgByteArr;
-            await HttpUserRequest.PostInsertUserAsync(user);
+            if (imageName != null)
+            {
+                FileStream fs = new FileStream(imageName, FileMode.Open, FileAccess.Read);
+                byte[] imgByteArr = new byte[fs.Length];
+                fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+                
+                user.UserImage = imgByteArr;
+            }
+            user.Name = TName.Text; user.Surname = TSurname.Text; user.Email = TEmail.Text; user.Age = Convert.ToUInt32(CAge.Text);
+            user.Phone = TPhone.Text; user.Region = TRegion.Text; user.Sity = TSity.Text; 
+            HttpUserRequest.PostInsertUserAsync(user);
         }
         private void BImage_Click(object sender, RoutedEventArgs e)
         {

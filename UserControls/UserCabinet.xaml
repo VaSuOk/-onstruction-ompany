@@ -133,7 +133,7 @@
 
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <ComboBox x:Name="CAge" Width="65" Height="40" HorizontalAlignment="Left" Margin="40,20,0,0" ItemsSource="{Binding age}"
+                            <ComboBox x:Name="CAge" Width="65" Height="40" HorizontalAlignment="Left" Margin="40,20,0,0" ItemsSource="{Binding userAge.Age}"
                                       
                                       FontFamily="Helvetica"
                                     FontSize="32"
