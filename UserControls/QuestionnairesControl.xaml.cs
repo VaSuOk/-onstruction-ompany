@@ -21,7 +21,7 @@ namespace Сonstruction_сompany.UserControls
     {
         private Grid grid;
         private List<QuestionnaireView> questionnaireViews;
-        public QuestionnairesControl( ref Grid grid)
+        public QuestionnairesControl( ref Grid grid, User user)
         {
             this.grid = grid;
             questionnaireViews = new List<QuestionnaireView>();

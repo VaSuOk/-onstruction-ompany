@@ -5,7 +5,7 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using Сonstruction_сompany.Users;
+using Сonstruction_сompany.View;
 
 namespace Сonstruction_сompany.RequestToServer
 {

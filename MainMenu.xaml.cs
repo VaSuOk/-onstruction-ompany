@@ -9,7 +9,7 @@ using System.Windows.Input;
 using Сonstruction_сompany.Auxiliary_classes;
 using Сonstruction_сompany.RequestToServer;
 using Сonstruction_сompany.UserControls;
-using Сonstruction_сompany.Users;
+using Сonstruction_сompany.View;
 
 namespace Сonstruction_сompany
 {
@@ -27,10 +27,8 @@ namespace Сonstruction_сompany
         public MainMenu(UserType userType, int ID)
         {
             InitializeComponent();
-            GridMain.Children.Clear();
-            GridMain.Children.Add(new QuestionnairesControl(ref GridMain));
-            //user = HttpUserRequest.GetUserByID(ID);
-            //InitComponentsAndResource(userType);
+            user = HttpUserRequest.GetUserByID(ID);
+            InitComponentsAndResource(userType);
         }
         private void InitComponentsAndResource(UserType userType)
         {   
@@ -39,7 +37,7 @@ namespace Сonstruction_сompany
             if (userType == UserType.Customer) 
                 listItemMenu.SetCustomerItemMenu(ref user);
             else
-                listItemMenu.SetWorkerItemMenu(ref user);
+                listItemMenu.SetWorkerItemMenu(ref user, GridMain);
             TUserType.Text = "." + userType;
             
             ListViewMenu.ItemsSource = listItemMenu._MenuItems;
@@ -82,13 +80,13 @@ namespace Сonstruction_сompany
         {
             if (e.LeftButton == MouseButtonState.Pressed) DragMove();
         }
-        #endregion
-
         private void BLogout_Click(object sender, RoutedEventArgs e)
         {
-            string data = String.Format("{0}", "logout");
             new Login().Show();
             this.Close();
         }
+        #endregion
+
+        
     }
 }

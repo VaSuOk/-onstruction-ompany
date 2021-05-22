@@ -5,7 +5,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Media;
 
-namespace Сonstruction_сompany.Users
+namespace Сonstruction_сompany.View
 {
     public enum UserType
     {

@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 using Сonstruction_сompany.UserControls;
-using Сonstruction_сompany.Users;
+using Сonstruction_сompany.View;
 
 namespace Сonstruction_сompany.Auxiliary_classes
 {
@@ -28,12 +29,12 @@ namespace Сonstruction_сompany.Auxiliary_classes
         }
         #endregion
         #region Methods
-        public void SetWorkerItemMenu(ref User user)
+        public void SetWorkerItemMenu(ref User user, Grid grid)
         {
             
             menuItems = new List<MenuItem>()
             {
-                new MenuItem("Questionnaire", PackIconKind.QuestionAnswer, "Анкета"),
+                new MenuItem("Questionnaire", PackIconKind.QuestionAnswer, "Анкета", new QuestionnairesControl(ref grid, user)),
                 new MenuItem("Groups", PackIconKind.Group, "Команда"),
                 new MenuItem("Task", PackIconKind.CalendarTask, "Завдання"),
                 new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet(ref user))

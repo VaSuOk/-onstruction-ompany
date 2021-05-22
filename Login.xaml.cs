@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using Сonstruction_сompany.RequestToServer;
-using Сonstruction_сompany.Users;
+using Сonstruction_сompany.View;
 using static Сonstruction_сompany.Auxiliary_classes.CheckLength;
 namespace Сonstruction_сompany
 {

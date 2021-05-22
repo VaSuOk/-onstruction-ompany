@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Сonstruction_сompany.Auxiliary_classes;
+using Сonstruction_сompany.View;
 
 namespace Сonstruction_сompany
 {
@@ -25,11 +26,8 @@ namespace Сonstruction_сompany
         #region Constructors
         public MainInfo()
         {
-            new MainMenu(Users.UserType.Worker, 1).Show(); 
-            this.Close();
             InitializeComponent();
             slider = new Auxiliary_classes.Slider(ref slide); 
-
         }
         #endregion
         #region Events
@@ -53,13 +51,13 @@ namespace Сonstruction_сompany
         }
         private void Customer_Click(object sender, RoutedEventArgs e)
         {
-            new Login(Users.UserType.Customer).Show();
+            new Login(UserType.Customer).Show();
             this.Close();
         }
 
         private void Worker_Click(object sender, RoutedEventArgs e)
         {
-            new Login(Users.UserType.Worker).Show();
+            new Login(UserType.Worker).Show();
             this.Close();
         }
         #endregion

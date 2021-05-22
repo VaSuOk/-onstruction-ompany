@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Сonstruction_сompany.RequestToServer;
-using Сonstruction_сompany.Users;
+using Сonstruction_сompany.View;
 
 namespace Сonstruction_сompany.UserControls
 {
