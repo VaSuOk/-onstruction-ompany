@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="Сonstruction_сompany.UserControls.QuestionnairesInfoController"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Сonstruction_сompany.UserControls"
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="550" d:DesignWidth="1020">
+    <Grid  HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="1020" Margin="0,0,0,0">
+        <Border Background="#FF1F0517" Opacity="1" BorderBrush="Transparent" BorderThickness="10" CornerRadius="40" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <Border Background="#FF1F0517" Opacity="1" BorderBrush="Transparent" BorderThickness="10" CornerRadius="40" Grid.ColumnSpan="3" Grid.RowSpan="3">
+                <StackPanel Margin="10,30,10,10">
+                    <StackPanel Orientation="Horizontal">
+                        <!--етап будівництва  обрати-->
+                        <Border Width="900" Height="240" CornerRadius="20" Margin="50,0,0,0" Background="Brown" HorizontalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                <Border x:Name="BFundament"  Width="155" Height="200" CornerRadius="20" Margin="70,0,0,0" BorderThickness="2" BorderBrush="Orange" MouseDown="BFundament_MouseDown" >
+                                    <StackPanel  Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0" >
+                                        <Border x:Name="beton"  Width="150" Height="150" CornerRadius="40" Margin="0" BorderThickness="0" BorderBrush="Black">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="1"/>
+                                            </Border.Effect>
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="D:\KPK\ДИПЛОМ\SOFT\Сonstruction сompany\Source\fundament.png"  Stretch="Fill" />
+                                            </Border.Background>
+                                        </Border>
+                                        <Label
+                                                Content="Фундамент"
+                                                FontFamily="Helvetica"
+                                                FontSize="18" 
+                                                FontWeight="Bold"
+                                                HorizontalAlignment="Center"
+                                                Foreground="Orange">
+                                            <Label.Effect>
+                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                            </Label.Effect>
+                                        </Label>
+                                    </StackPanel>
+                                </Border>
+                                <Border  x:Name="BStina"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="40,0,0,0" MouseDown="BStina_MouseDown">
+                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                        <Border x:Name="stina" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                            <Border.Effect >
+                                                <DropShadowEffect ShadowDepth="1"/>
+                                            </Border.Effect>
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Source/stina.jpg"  Stretch="Fill" />
+                                            </Border.Background>
+                                        </Border>
+                                        <Label
+                                                    Content="Будівництво"
+                                                    FontFamily="Helvetica"
+                                                    HorizontalAlignment="Center"
+                                                    FontSize="18" 
+                                                    FontWeight="Bold"
+                                                    Foreground="Orange">
+                                            <Label.Effect>
+                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                            </Label.Effect>
+                                        </Label>
+                                    </StackPanel>
+                                </Border>
+                                <Border x:Name="BDax"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="40,0,0,0" MouseDown="BDax_MouseDown">
+                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                        <Border x:Name="dax"  Width="150" Height="150" CornerRadius="40" Margin="0">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="1"/>
+                                            </Border.Effect>
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Source/dax.jpg"  Stretch="Fill" />
+                                            </Border.Background>
+                                        </Border>
+                                        <Label
+                                                    Content="Покрівля"
+                                                    FontFamily="Helvetica"
+                                                    FontSize="18" 
+                                                    FontWeight="Bold"
+                                                    HorizontalAlignment="Center"
+                                                    Foreground="Orange">
+                                            <Label.Effect>
+                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                            </Label.Effect>
+                                        </Label>
+                                    </StackPanel>
+                                </Border>
+                                <Border x:Name="BVnytr"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="40,0,0,0" MouseDown="BVnytr_MouseDown">
+                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                        <Border x:Name="vnytr" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="1"/>
+                                            </Border.Effect>
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Source/vnytrszovns.jpg"  Stretch="Fill" />
+                                            </Border.Background>
+                                        </Border>
+                                        <Label
+                                                    Content="Обробка"
+                                                    FontFamily="Helvetica"
+                                                    FontSize="18" 
+                                                    
+                                                    HorizontalAlignment="Center"
+                                                    FontWeight="Bold"
+                                                    Foreground="Orange">
+                                            <Label.Effect>
+                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                            </Label.Effect>
+                                        </Label>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <Border CornerRadius="20" Width="800" Height="60" Background="Black" Margin="0,10,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Center">
+                            <Button Opacity="0.7" FontSize="18" Margin="0,0,50,0" x:Name="BMain" Width="150" Height="40" Content="ПРАЦІВНИК" Click="BMain_Click"></Button>
+                            <Button Opacity="0.7" FontSize="18" x:Name="Bsupp" Width="150" Height="40" Content="ПОМІЧНИК" Click="Bsupp_Click" ></Button>
+                            <Button Opacity="0.7" Visibility="Collapsed" FontSize="18" Margin="50,0,0,0" x:Name="BSupp2" Width="150" Height="40" Content="ПРАЦІВНИК"  Click="BSupp2_Click"></Button>
+                            <Button Opacity="0.7" Visibility="Collapsed" FontSize="18" Margin="50,0,0,0" x:Name="BSupp3" Width="150" Height="40" Content="ПРАЦІВНИК" Click="BSupp3_Click" ></Button>
+                        </StackPanel>
+                    </Border>
+                    <Border CornerRadius="20" Width="700" Height="100" Background="DarkRed" Margin="0,10,0,0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Text="0,00"
+                                                Margin="10,20,0,0"
+                                                FontWeight="Bold"
+                                                x:Name="TSalary"
+                                                FontFamily="Helvetica"
+                                                FontSize="26"
+                                                VerticalAlignment="Center"
+                                                Foreground="Orange"
+                                                BorderThickness="0"
+                                                Background="Transparent"
+                                                HorizontalAlignment="Center">
+                                    <TextBox.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </TextBox.Effect>
+                                </TextBox>
+                                <Label
+                                                Content="Бажана зарплата"
+                                                FontFamily="Helvetica"
+                                                FontSize="18" 
+                                                FontWeight="Bold"
+                                                HorizontalAlignment="Center"
+                                                Foreground="Orange">
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </Label.Effect>
+                                </Label>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Margin ="50,0,0,0">
+                                <ComboBox FontFamily="Helvetica" Width="250" HorizontalContentAlignment="Center"
+                                                FontSize="24" Foreground="Orange" FontWeight="Bold" Background="Transparent" x:Name ="WRegion"
+                                                    VerticalAlignment="Center"  Margin="0,18,0,0"  >
+
+                                </ComboBox>
+
+                                <Label
+                                                Content="Регіон роботи"
+                                                FontFamily="Helvetica"
+                                                FontSize="18" 
+                                                FontWeight="Bold"
+                                                HorizontalAlignment="Center"
+                                                Foreground="Orange">
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                    </Label.Effect>
+                                </Label>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

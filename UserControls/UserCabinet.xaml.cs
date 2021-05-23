@@ -26,10 +26,15 @@ namespace Сonstruction_сompany.UserControls
         private User user;
         private string imageName, strName;
         private UserAge userAge;
+        private Regions LRegions;
         public UserCabinet(ref User user)
         {
-            userAge = new UserAge();
             InitializeComponent();
+
+            userAge = new UserAge();
+            LRegions = new Regions();
+
+            LRegion.ItemsSource = LRegions.regions;
 
             CAge.ItemsSource = userAge.Age;
             this.user = user;
@@ -44,7 +49,7 @@ namespace Сonstruction_сompany.UserControls
                 TSurname.Text = user.Surname;
                 TEmail.Text = user.Email;
                 TPhone.Text = user.Phone;
-                TRegion.Text = user.Region;
+                LRegion.SelectedItem = user.Region;
                 TSity.Text = user.Sity;
                 CAge.SelectedItem = (int) user.Age;
 
@@ -97,7 +102,7 @@ namespace Сonstruction_сompany.UserControls
                 user.UserImage = imgByteArr;
             }
             user.Name = TName.Text; user.Surname = TSurname.Text; user.Email = TEmail.Text; user.Age = Convert.ToUInt32(CAge.Text);
-            user.Phone = TPhone.Text; user.Region = TRegion.Text; user.Sity = TSity.Text; 
+            user.Phone = TPhone.Text; user.Region = LRegion.Text; user.Sity = TSity.Text; 
             HttpUserRequest.PostInsertUserAsync(user);
         }
         private void BImage_Click(object sender, RoutedEventArgs e)
@@ -163,8 +168,8 @@ namespace Сonstruction_сompany.UserControls
             TEmail.BorderThickness = new Thickness(1, 1, 1, 1);
             TPhone.Focusable = true;
             TPhone.BorderThickness = new Thickness(1, 1, 1, 1);
-            TRegion.Focusable = true;
-            TRegion.BorderThickness = new Thickness(1, 1, 1, 1);
+            LRegion.Focusable = true;
+            LRegion.BorderThickness = new Thickness(1, 1, 1, 1);
             TSity.Focusable = true;
             TSity.BorderThickness = new Thickness(1, 1, 1, 1);
         }
@@ -178,8 +183,8 @@ namespace Сonstruction_сompany.UserControls
             TEmail.BorderThickness = new Thickness(0, 0, 0, 0);
             TPhone.Focusable = false;
             TPhone.BorderThickness = new Thickness(0, 0, 0, 0);
-            TRegion.Focusable = false;
-            TRegion.BorderThickness = new Thickness(0, 0, 0, 0);
+            LRegion.Focusable = false;
+            LRegion.BorderThickness = new Thickness(0, 0, 0, 0);
             TSity.Focusable = false;
             TSity.BorderThickness = new Thickness(0, 0, 0, 0);
         }

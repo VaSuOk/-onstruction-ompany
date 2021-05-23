@@ -71,6 +71,14 @@ namespace Сonstruction_сompany
                     GridMain.Children.Add(selectedMenuItem.usc);
                     if(selectedMenuItem.xName == "Cabinet") { BLogout.Visibility = Visibility.Visible; }
                     else if(BLogout.Visibility == Visibility.Visible) { BLogout.Visibility = Visibility.Hidden; }
+
+                    //Обнова даних "тимчасова"
+                    if (selectedMenuItem.usc.GetType().Name == "UserCabinet")
+                        selectedMenuItem.usc = new UserCabinet(ref user);
+                    else if (selectedMenuItem.usc.GetType().Name == "QuestionnairesControl")
+                        selectedMenuItem.usc = new QuestionnairesControl(ref GridMain, user);
+                    else if (selectedMenuItem.usc.GetType().Name == "CreateQuestionnaire")
+                        selectedMenuItem.usc = new CreateQuestionnaire(user);
                 }      
             }
             

@@ -51,7 +51,7 @@ namespace Сonstruction_сompany.UserControls
         {
             if (user != null)
             {
-                TName.Text = user.Name + user.id;
+                TName.Text = user.Name;
                 TSurname.Text = user.Surname;
                 TEmail.Text = user.Email;
                 TPhone.Text = user.Phone;

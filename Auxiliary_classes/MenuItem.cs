@@ -12,7 +12,7 @@ namespace Сonstruction_сompany.Auxiliary_classes
         public string xName { get; }
         public PackIconKind icon { get; }
         public string data { get; set; }
-        public UserControl usc { get; }
+        public UserControl usc { get; set; }
         #endregion
 
         #region Constructions

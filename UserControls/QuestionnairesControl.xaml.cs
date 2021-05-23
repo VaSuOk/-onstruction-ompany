@@ -51,8 +51,20 @@ namespace Сonstruction_сompany.UserControls
         }
         private void Border_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            grid.Children.Clear();
-            grid.Children.Add(new CreateQuestionnaire(user));
+            var border = (FrameworkElement)sender;
+            var text = (QuestionnaireView)border.DataContext;
+            if(text.id == 0)
+            {
+                grid.Children.Clear();
+                grid.Children.Add(new CreateQuestionnaire(user));
+            }
+            else
+            {
+                Questionnaire questionnaire = questionnaires.Find(X => X.ID == text.id);
+                grid.Children.Clear();
+                grid.Children.Add(new QuestionnairesInfoController(questionnaire));
+            }
+            
         }
     }
 }

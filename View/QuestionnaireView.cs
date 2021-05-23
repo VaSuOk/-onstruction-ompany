@@ -11,6 +11,7 @@ namespace Сonstruction_сompany.View
 {
     public class QuestionnaireView
     {
+        public uint id;
         public string Position { get; set; }
         public ImageSource image { get; set; }
         private string nimg;
@@ -42,13 +43,13 @@ namespace Сonstruction_сompany.View
             }
         }
 
-        public QuestionnaireView(Questionnaire questionnaire)
+        public QuestionnaireView(Questionnaire questionnaire = null)
         {
             if(questionnaire != null)
             {
                 Status = questionnaire.stage.ToString();
                 Position = questionnaire.Position;
-
+                id = questionnaire.ID;
                 if (questionnaire.stage == Stage.Earthwork)
                     nimg = @"D:\KPK\ДИПЛОМ\SOFT\Сonstruction сompany\Source\fundament.png";
                 else if (questionnaire.stage == Stage.Construction)
@@ -68,6 +69,7 @@ namespace Сonstruction_сompany.View
                 Position = "нову анкету";
                 nimg = @"D:\KPK\ДИПЛОМ\SOFT\Сonstruction сompany\Source\додати.jpg";
                 brush = System.Windows.Media.Brushes.Transparent;
+                id = 0;
             }
             var imageSource = new BitmapImage();
             MemoryStream ms;
