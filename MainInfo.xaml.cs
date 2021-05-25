@@ -25,7 +25,10 @@ namespace Сonstruction_сompany
         #endregion
         #region Constructors
         public MainInfo()
-        {
+        {/////////
+            new MainMenu(UserType.Customer, 0).Show();
+            this.Close();
+
             InitializeComponent();
             slider = new Auxiliary_classes.Slider(ref slide); 
         }

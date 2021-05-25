@@ -27,8 +27,11 @@ namespace Сonstruction_сompany
         public MainMenu(UserType userType, int ID)
         {
             InitializeComponent();
-            user = HttpUserRequest.GetUserByID(ID);
-            InitComponentsAndResource(userType);
+
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new CreateOrder());
+            //user = HttpUserRequest.GetUserByID(ID);
+            //InitComponentsAndResource(userType);
         }
         private void InitComponentsAndResource(UserType userType)
         {   

@@ -8,15 +8,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Source\D1.jpg" />
+    <None Remove="Source\D2.jpg" />
+    <None Remove="Source\D3.jpg" />
+    <None Remove="Source\D4.jpg" />
     <None Remove="Source\dax.jpg" />
+    <None Remove="Source\f1.png" />
+    <None Remove="Source\f2.png" />
+    <None Remove="Source\f3.png" />
+    <None Remove="Source\f4.png" />
     <None Remove="Source\fon.jpg" />
     <None Remove="Source\fundament.jpg" />
     <None Remove="Source\fundament.png" />
+    <None Remove="Source\office.jpg" />
+    <None Remove="Source\privateHome.jpg" />
     <None Remove="Source\s2.jpg" />
     <None Remove="Source\s3.jpg" />
     <None Remove="Source\s4.jpg" />
+    <None Remove="Source\St1.jpg" />
+    <None Remove="Source\St2.jpg" />
+    <None Remove="Source\St3.jpg" />
+    <None Remove="Source\St4.jpg" />
+    <None Remove="Source\St5.jpg" />
+    <None Remove="Source\St6.jpg" />
     <None Remove="Source\stina.jpg" />
     <None Remove="Source\vnytrszovns.jpg" />
+    <None Remove="Source\workhome.jpg" />
+    <None Remove="Source\багато_квартирна.jpg" />
+    <None Remove="Source\Без названия %281%29.jpg" />
+    <None Remove="Source\відпочивалні.jpg" />
     <None Remove="Source\додати.jpg" />
   </ItemGroup>
 
@@ -29,15 +49,35 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Source\D1.jpg" />
+    <Resource Include="Source\D2.jpg" />
+    <Resource Include="Source\D3.jpg" />
+    <Resource Include="Source\D4.jpg" />
     <Resource Include="Source\dax.jpg" />
+    <Resource Include="Source\f1.png" />
+    <Resource Include="Source\f2.png" />
+    <Resource Include="Source\f3.png" />
+    <Resource Include="Source\f4.png" />
     <Resource Include="Source\fon.jpg" />
     <Resource Include="Source\fundament.jpg" />
     <Resource Include="Source\fundament.png" />
+    <Resource Include="Source\office.jpg" />
+    <Resource Include="Source\privateHome.jpg" />
     <Resource Include="Source\s2.jpg" />
     <Resource Include="Source\s3.jpg" />
     <Resource Include="Source\s4.jpg" />
+    <Resource Include="Source\St1.jpg" />
+    <Resource Include="Source\St2.jpg" />
+    <Resource Include="Source\St3.jpg" />
+    <Resource Include="Source\St4.jpg" />
+    <Resource Include="Source\St5.jpg" />
+    <Resource Include="Source\St6.jpg" />
     <Resource Include="Source\stina.jpg" />
     <Resource Include="Source\vnytrszovns.jpg" />
+    <Resource Include="Source\workhome.jpg" />
+    <Resource Include="Source\багато_квартирна.jpg" />
+    <Resource Include="Source\Без названия (1).jpg" />
+    <Resource Include="Source\відпочивалні.jpg" />
     <Resource Include="Source\додати.jpg" />
   </ItemGroup>
 
