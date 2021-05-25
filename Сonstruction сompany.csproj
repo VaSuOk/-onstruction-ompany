@@ -12,6 +12,7 @@
     <None Remove="Source\D2.jpg" />
     <None Remove="Source\D3.jpg" />
     <None Remove="Source\D4.jpg" />
+    <None Remove="Source\D5.jpg" />
     <None Remove="Source\dax.jpg" />
     <None Remove="Source\f1.png" />
     <None Remove="Source\f2.png" />
@@ -22,6 +23,11 @@
     <None Remove="Source\fundament.png" />
     <None Remove="Source\office.jpg" />
     <None Remove="Source\privateHome.jpg" />
+    <None Remove="Source\R1.jpg" />
+    <None Remove="Source\R2.jpg" />
+    <None Remove="Source\R3.jpg" />
+    <None Remove="Source\R4.jpg" />
+    <None Remove="Source\R5.jpg" />
     <None Remove="Source\s2.jpg" />
     <None Remove="Source\s3.jpg" />
     <None Remove="Source\s4.jpg" />
@@ -53,6 +59,7 @@
     <Resource Include="Source\D2.jpg" />
     <Resource Include="Source\D3.jpg" />
     <Resource Include="Source\D4.jpg" />
+    <Resource Include="Source\D5.jpg" />
     <Resource Include="Source\dax.jpg" />
     <Resource Include="Source\f1.png" />
     <Resource Include="Source\f2.png" />
@@ -63,6 +70,11 @@
     <Resource Include="Source\fundament.png" />
     <Resource Include="Source\office.jpg" />
     <Resource Include="Source\privateHome.jpg" />
+    <Resource Include="Source\R1.jpg" />
+    <Resource Include="Source\R2.jpg" />
+    <Resource Include="Source\R3.jpg" />
+    <Resource Include="Source\R4.jpg" />
+    <Resource Include="Source\R5.jpg" />
     <Resource Include="Source\s2.jpg" />
     <Resource Include="Source\s3.jpg" />
     <Resource Include="Source\s4.jpg" />

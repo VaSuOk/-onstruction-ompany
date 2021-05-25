@@ -28,10 +28,8 @@ namespace Сonstruction_сompany
         {
             InitializeComponent();
 
-            GridMain.Children.Clear();
-            GridMain.Children.Add(new CreateOrder());
-            //user = HttpUserRequest.GetUserByID(ID);
-            //InitComponentsAndResource(userType);
+            user = HttpUserRequest.GetUserByID(ID);
+            InitComponentsAndResource(userType);
         }
         private void InitComponentsAndResource(UserType userType)
         {   

@@ -15,7 +15,7 @@
             <StackPanel >
                 <StackPanel  >
                     <ScrollViewer Grid.Row="0"  VerticalScrollBarVisibility="Visible" Margin="0,0,0,0" Height="480">
-                        <Border Width="1000" Height="2130" CornerRadius="20,20,0,0" Margin="0,0,0,0" Background="White">
+                        <Border Width="1000" Height="2250" CornerRadius="20,20,0,0" Margin="0,0,0,0" Background="White">
                             <StackPanel>
                                 <Border Width="470" Height="50" CornerRadius="20" Margin="0,5,0,0" Background="#FF1F0517">
                                     <TextBlock 
@@ -896,7 +896,7 @@
                                     </Border>
                                 </StackPanel>
                                 <StackPanel >
-                                    <Border Width="900" Height="360" CornerRadius="20" Margin="0,10,0,0" Background="#FF1B0214" Visibility="Visible" >
+                                    <Border Width="900" Height="610" CornerRadius="20" Margin="0,10,0,0" Background="#FF1B0214" Visibility="Visible" >
                                         <StackPanel Margin="0,8,0,0" HorizontalAlignment ="Center">
 
                                             <Border CornerRadius="20" Background="White" HorizontalAlignment="Center" Margin="0,0,0,0">
@@ -934,11 +934,11 @@
                                                                     <DropShadowEffect ShadowDepth="1"/>
                                                                 </Border.Effect>
                                                                 <Border.Background>
-                                                                    <ImageBrush ImageSource="/Source/f1.png"  Stretch="Fill" />
+                                                                    <ImageBrush ImageSource="/Source/D1.jpg"  Stretch="Fill" />
                                                                 </Border.Background>
                                                             </Border>
                                                             <Label
-                                                            Content="Плитний"
+                                                            Content="Плоский"
                                                             FontFamily="Helvetica"
                                                             FontSize="18" 
                                                             FontWeight="Bold"
@@ -959,11 +959,11 @@
                                                                     <DropShadowEffect ShadowDepth="1"/>
                                                                 </Border.Effect>
                                                                 <Border.Background>
-                                                                    <ImageBrush ImageSource="/Source/f2.png"  Stretch="Fill" />
+                                                                    <ImageBrush ImageSource="/Source/D2.jpg"  Stretch="Fill" />
                                                                 </Border.Background>
                                                             </Border>
                                                             <Label
-                                                            Content="Стрічковий"
+                                                            Content="Двоскатний"
                                                             FontFamily="Helvetica"
                                                             FontSize="18" 
                                                             FontWeight="Bold"
@@ -982,11 +982,11 @@
                                                                     <DropShadowEffect ShadowDepth="1"/>
                                                                 </Border.Effect>
                                                                 <Border.Background>
-                                                                    <ImageBrush ImageSource="/Source/f3.png"  Stretch="Fill" />
+                                                                    <ImageBrush ImageSource="/Source/D3.jpg"  Stretch="Fill" />
                                                                 </Border.Background>
                                                             </Border>
                                                             <Label
-                                                                Content="Стовпчастий"
+                                                                Content="Шатровий"
                                                                 FontFamily="Helvetica"
                                                                 FontSize="18" 
                                                     
@@ -1006,11 +1006,35 @@
                                                                     <DropShadowEffect ShadowDepth="1"/>
                                                                 </Border.Effect>
                                                                 <Border.Background>
-                                                                    <ImageBrush ImageSource="/Source/f4.png"  Stretch="Fill" />
+                                                                    <ImageBrush ImageSource="/Source/D4.jpg"  Stretch="Fill" />
                                                                 </Border.Background>
                                                             </Border>
                                                             <Label
-                                                            Content="Пальовий"
+                                                            Content="Односкатний"
+                                                            FontFamily="Helvetica"
+                                                            FontSize="18" 
+                                                    
+                                                            HorizontalAlignment="Center"
+                                                            FontWeight="Bold"
+                                                            Foreground="Orange">
+                                                                <Label.Effect>
+                                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                                </Label.Effect>
+                                                            </Label>
+                                                        </StackPanel>
+                                                    </Border>
+                                                    <Border x:Name="BD5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                        <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                                            <Border x:Name="bd5" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                                                <Border.Effect>
+                                                                    <DropShadowEffect ShadowDepth="1"/>
+                                                                </Border.Effect>
+                                                                <Border.Background>
+                                                                    <ImageBrush ImageSource="/Source/D5.jpg"  Stretch="Fill" />
+                                                                </Border.Background>
+                                                            </Border>
+                                                            <Label
+                                                            Content="Багатоскатний"
                                                             FontFamily="Helvetica"
                                                             FontSize="18" 
                                                     
@@ -1024,12 +1048,148 @@
                                                         </StackPanel>
                                                     </Border>
                                                 </StackPanel>
+                                                
                                             </StackPanel>
 
+                                            <Label
+                                                Margin="0,20,0,10"
+                                                    Content="Оберіть матеріал покрівлі даху"
+                                                    FontFamily="Helvetica"
+                                                    FontSize="20" 
+                                                    FontWeight="Bold"
+                                                    HorizontalAlignment="Center"
+                                                    Foreground="Orange">
+                                                <Label.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                </Label.Effect>
+                                            </Label>
 
 
-
-
+                                            <StackPanel Orientation="Horizontal"  Margin="0,0,0,20">
+                                                <Border x:Name="BR1"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                                        <Border x:Name="br1" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                                            <Border.Effect>
+                                                                <DropShadowEffect ShadowDepth="1"/>
+                                                            </Border.Effect>
+                                                            <Border.Background>
+                                                                <ImageBrush ImageSource="/Source/R1.jpg"  Stretch="Fill" />
+                                                            </Border.Background>
+                                                        </Border>
+                                                        <TextBlock
+                                                            Margin="5,0,0,0"
+                                                                    Text="Металочерепиця"
+                                                                    FontFamily="Helvetica"
+                                                                    FontSize="16" 
+                                                                    TextWrapping="Wrap"
+                                                                    HorizontalAlignment="Center"
+                                                                    FontWeight="Bold"
+                                                                    Foreground="Orange">
+                                                            <TextBlock.Effect>
+                                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                            </TextBlock.Effect>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </Border>
+                                                <Border x:Name="BR2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                                        <Border x:Name="br2" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                                            <Border.Effect>
+                                                                <DropShadowEffect ShadowDepth="1"/>
+                                                            </Border.Effect>
+                                                            <Border.Background>
+                                                                <ImageBrush ImageSource="/Source/R2.jpg"  Stretch="Fill" />
+                                                            </Border.Background>
+                                                        </Border>
+                                                        <TextBlock
+                                                                    Text="Профнастил"
+                                                                    FontFamily="Helvetica"
+                                                                    FontSize="18" 
+                                                                    TextWrapping="Wrap"
+                                                                    HorizontalAlignment="Center"
+                                                                    FontWeight="Bold"
+                                                                    Foreground="Orange">
+                                                            <TextBlock.Effect>
+                                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                            </TextBlock.Effect>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </Border>
+                                                <Border x:Name="BR3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                                        <Border x:Name="br3" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                                            <Border.Effect>
+                                                                <DropShadowEffect ShadowDepth="1"/>
+                                                            </Border.Effect>
+                                                            <Border.Background>
+                                                                <ImageBrush ImageSource="/Source/R3.jpg"  Stretch="Fill" />
+                                                            </Border.Background>
+                                                        </Border>
+                                                        <TextBlock
+                                                                    Text="Ондулін"
+                                                                    FontFamily="Helvetica"
+                                                                    FontSize="18" 
+                                                                    TextWrapping="Wrap"
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center"
+                                                                    FontWeight="Bold"
+                                                                    Foreground="Orange">
+                                                            <TextBlock.Effect>
+                                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                            </TextBlock.Effect>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </Border>
+                                                <Border x:Name="BR4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                                        <Border x:Name="br4" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                                            <Border.Effect>
+                                                                <DropShadowEffect ShadowDepth="1"/>
+                                                            </Border.Effect>
+                                                            <Border.Background>
+                                                                <ImageBrush ImageSource="/Source/R4.jpg"  Stretch="Fill" />
+                                                            </Border.Background>
+                                                        </Border>
+                                                        <TextBlock
+                                                                    Text="Шифер"
+                                                                    FontFamily="Helvetica"
+                                                                    FontSize="18" 
+                                                                    TextWrapping="Wrap"
+                                                                    HorizontalAlignment="Center"
+                                                                    FontWeight="Bold"
+                                                                    Foreground="Orange">
+                                                            <TextBlock.Effect>
+                                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                            </TextBlock.Effect>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </Border>
+                                                <Border x:Name="BR5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
+                                                        <Border x:Name="br5" Width="150" Height="150" CornerRadius="40" Margin="0">
+                                                            <Border.Effect>
+                                                                <DropShadowEffect ShadowDepth="1"/>
+                                                            </Border.Effect>
+                                                            <Border.Background>
+                                                                <ImageBrush ImageSource="/Source/R5.jpg"  Stretch="Fill" />
+                                                            </Border.Background>
+                                                        </Border>
+                                                        <TextBlock
+                                                                    Text="Фальц"
+                                                                    FontFamily="Helvetica"
+                                                                    FontSize="18" 
+                                                                    TextWrapping="Wrap"
+                                                                    HorizontalAlignment="Center"
+                                                                    FontWeight="Bold"
+                                                                    Foreground="Orange">
+                                                            <TextBlock.Effect>
+                                                                <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
+                                                            </TextBlock.Effect>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </Border>
+                                                
+                                            </StackPanel>
 
                                         </StackPanel>
                                     </Border>
@@ -1061,7 +1221,7 @@
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
-                            <Button Opacity="1" Margin="70,0,50,0" x:Name="Wmadin" Width="140" FontSize="18" FontWeight="Bold" Height="40" Content="СТВОРИТИ" ></Button>
+                            <Button Opacity="1" Margin="70,0,50,0" x:Name="COrder" Width="140" FontSize="18" FontWeight="Bold" Height="40" Content="СТВОРИТИ" Click="COrder_Click" ></Button>
                         </StackPanel>
                     </Border>
                 </StackPanel>

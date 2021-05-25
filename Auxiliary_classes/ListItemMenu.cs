@@ -44,7 +44,7 @@ namespace Сonstruction_сompany.Auxiliary_classes
         {
             menuItems = new List<MenuItem>()
             {
-                new MenuItem("Order", PackIconKind.QuestionAnswer, "Замовлення"),
+                new MenuItem("Order", PackIconKind.QuestionAnswer, "Замовити", new CreateOrder(ref user)),
                 new MenuItem(".....", PackIconKind.Add, "......"),
                 new MenuItem("Cabinet", PackIconKind.FileCabinet, "Кабінет", new UserCabinet(ref user))
             };
