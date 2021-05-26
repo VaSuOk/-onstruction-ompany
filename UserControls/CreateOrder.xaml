@@ -15,7 +15,7 @@
             <StackPanel >
                 <StackPanel  >
                     <ScrollViewer Grid.Row="0"  VerticalScrollBarVisibility="Visible" Margin="0,0,0,0" Height="480">
-                        <Border Width="1000" Height="2250" CornerRadius="20,20,0,0" Margin="0,0,0,0" Background="White">
+                        <Border Width="1000" Height="2120" CornerRadius="20,20,0,0" Margin="0,0,0,0" Background="White" x:Name="BMain">
                             <StackPanel>
                                 <Border Width="470" Height="50" CornerRadius="20" Margin="0,5,0,0" Background="#FF1F0517">
                                     <TextBlock 
@@ -37,7 +37,7 @@
                                         </TextBlock.Effect>
                                     </TextBlock>
                                 </Border>
-                                <Border Width="900" Height="400" CornerRadius="20" Margin="0,10,0,10" Background="#FF1B0214" Visibility="Visible" >
+                                <Border Width="900" CornerRadius="20" Margin="0,10,0,10" Background="#FF1B0214" Visibility="Visible" >
                                     <StackPanel Orientation="Vertical" Margin="20,20,0,0">
                                         
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment ="Center">
@@ -55,9 +55,9 @@
                                                 </Label.Effect>
                                             </Label>
                                                 </Border>
-                                            <Button Background="White" Foreground="#FF1B0214" Content="^" Margin="0,3,0,0" FontSize="40" Height="30" VerticalAlignment="Top"></Button>
+                                            <Button x:Name="BHiVi"  Background="White" Foreground="#FF1B0214" Content="▲" Margin="0,3,0,0" FontSize="35" Height="35" VerticalAlignment="Top" Click ="Button_Click"></Button>
                                             </StackPanel>
-                                        
+                                        <StackPanel x:Name="UContent">
                                         <StackPanel Orientation="Horizontal">
                                             <StackPanel >
                                                 <Border  x:Name="BImg" Width="200" Height="200" CornerRadius="10" Margin="0,0,0,0" 
@@ -201,7 +201,7 @@
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel >
-                                            <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
+                                            <StackPanel Orientation="Horizontal" Margin="0,40,0,20">
                                                 <StackPanel Orientation="Vertical" >
                                                     <TextBox Text="Email"
                                                         x:Name="TEmail"
@@ -378,6 +378,7 @@
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
+                                    </StackPanel>
                                 </Border>
                                 <StackPanel Orientation="Horizontal">
                                     <!--Тип будівлі-->
@@ -400,7 +401,7 @@
                                                 </Border>
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                                            <Border x:Name="BprivateHome"  Width="155" Height="200" CornerRadius="40" Margin="20,0,0,0" BorderThickness="2" BorderBrush="Orange"  >
+                                            <Border x:Name="BprivateHome"  Width="155" Height="200" CornerRadius="40" Margin="20,0,0,0" BorderThickness="2" BorderBrush="Orange"  MouseDown="BprivateHome_MouseDown">
                                                 <StackPanel  Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0" >
                                                     <Border x:Name="privateHome"  Width="150" Height="150" CornerRadius="40" Margin="0" BorderThickness="0" BorderBrush="Black">
                                                         <Border.Effect>
@@ -424,7 +425,7 @@
                                                     </Label>
                                                 </StackPanel>
                                             </Border>
-                                            <Border  x:Name="BApartment"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0">
+                                            <Border  x:Name="BApartment"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BApartment_MouseDown">
                                                 <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                     <Border x:Name="Apartment" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                         <Border.Effect >
@@ -447,7 +448,7 @@
                                                     </Label>
                                                 </StackPanel>
                                             </Border>
-                                            <Border x:Name="BIndustrial"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0">
+                                            <Border x:Name="BIndustrial"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BIndustrial_MouseDown">
                                                 <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                     <Border x:Name="industrial"  Width="150" Height="150" CornerRadius="40" Margin="0">
                                                         <Border.Effect>
@@ -470,7 +471,7 @@
                                                     </Label>
                                                 </StackPanel>
                                             </Border>
-                                            <Border x:Name="BOffice"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                            <Border x:Name="BOffice"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0"  MouseDown="BOffice_MouseDown">
                                                 <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                     <Border x:Name="Office" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                         <Border.Effect>
@@ -494,7 +495,7 @@
                                                     </Label>
                                                 </StackPanel>
                                             </Border>
-                                            <Border x:Name="BResting"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                            <Border x:Name="BResting"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0"  MouseDown="BResting_MouseDown">
                                                 <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                     <Border x:Name="resting" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                         <Border.Effect>
@@ -524,51 +525,6 @@
 <!--                      ================================================Тип фундамента========================================-->
                                 </StackPanel>
 
-
-                                <StackPanel>
-                                    <Border Width="900" Height="130" CornerRadius="20" Margin="0,10,0,0" Background="#FF1B0214" Visibility="Visible" >
-                                        <StackPanel Margin="0,8,0,0">
-                                            <StackPanel Orientation="Horizontal" HorizontalAlignment ="Center" Margin="0,0,0,10">
-                                                <Border CornerRadius="20" Background="White" HorizontalAlignment="Center" Margin="0,0,0,0">
-                                                    <Label
-                                                    Content=" Завантажте план будинку "
-                                                    FontFamily="Helvetica"
-                                                    FontSize="28" 
-                                                    FontWeight="Bold"
-                                                    HorizontalAlignment="Center"
-                                                    Foreground="Orange">
-                                                        <Label.Effect>
-                                                            <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
-                                                        </Label.Effect>
-                                                    </Label>
-                                                </Border>
-                                                
-                                            </StackPanel>
-                                            <StackPanel Orientation ="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                                                <Label
-                                                    Content="Файл - "
-                                                    FontFamily="Helvetica"
-                                                    FontSize="22" 
-                                                    FontWeight="Bold"
-                                                    Margin="0,0,20,0"
-                                                    HorizontalAlignment="Center"
-                                                    Foreground="Orange">
-                                                    <Label.Effect>
-                                                        <DropShadowEffect ShadowDepth="1" BlurRadius="1" Color="Black" />
-                                                    </Label.Effect>
-                                                </Label>
-                                                <Button FontSize="18" 
-                                                    FontWeight="Bold" Content=" ОБРАТИ "></Button>
-                                            </StackPanel>
-                                            
-                                        </StackPanel>
-                                    </Border>
-                                </StackPanel>
-                                
-                                
-                                
-                                
-                                
                                 <StackPanel >
                                     <Border Width="900" Height="330" CornerRadius="20" Margin="0,10,0,0" Background="#FF1B0214" Visibility="Visible" >
                                         <StackPanel Margin="0,8,0,0" HorizontalAlignment ="Center">
@@ -600,7 +556,7 @@
                                             </Label>
 
                                             <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment ="Center">
-                                                <Border x:Name="BF1"  Width="155" Height="200" CornerRadius="40" Margin="20,0,0,0" BorderThickness="2" BorderBrush="Orange"  >
+                                                <Border x:Name="BF1"  Width="155" Height="200" CornerRadius="40" Margin="20,0,0,0" BorderThickness="2" BorderBrush="Orange"  MouseDown="BF1_MouseDown">
                                                     <StackPanel  Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0" >
                                                         <Border x:Name="Bf1"  Width="150" Height="150" CornerRadius="40" Margin="0" BorderThickness="0" BorderBrush="Black">
                                                             <Border.Effect>
@@ -625,7 +581,7 @@
                                                     </StackPanel>
                                                 </Border>
 
-                                                <Border x:Name="BF2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0">
+                                                <Border x:Name="BF2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BF2_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="bf2"  Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
@@ -648,7 +604,7 @@
                                                         </Label>
                                                     </StackPanel>
                                                 </Border>
-                                                <Border x:Name="BF3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                <Border x:Name="BF3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BF3_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="bf3" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
@@ -672,7 +628,7 @@
                                                         </Label>
                                                     </StackPanel>
                                                 </Border>
-                                                <Border x:Name="BF4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                <Border x:Name="BF4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown ="BF4_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="bf4" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
@@ -738,7 +694,7 @@
                                             <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment ="Center">
                                                 <ScrollViewer Grid.Row="0" Margin="0,10,0,0" Width="880" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
                                                     <StackPanel Orientation="Horizontal"  Margin="0,0,0,20">
-                                                        <Border x:Name="BS1"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                        <Border x:Name="BS1"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0"  MouseDown="BS1_MouseDown">
                                                             <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                                 <Border x:Name="bs1" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                     <Border.Effect>
@@ -762,7 +718,7 @@
                                                                 </TextBlock>
                                                             </StackPanel>
                                                         </Border>
-                                                        <Border x:Name="BS2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                        <Border x:Name="BS2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BS2_MouseDown">
                                                             <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                                 <Border x:Name="bs2" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                     <Border.Effect>
@@ -786,7 +742,7 @@
                                                                 </TextBlock>
                                                             </StackPanel>
                                                         </Border>
-                                                        <Border x:Name="BS3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                        <Border x:Name="BS3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BS3_MouseDown">
                                                             <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                                 <Border x:Name="bs3" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                     <Border.Effect>
@@ -811,7 +767,7 @@
                                                                 </TextBlock>
                                                             </StackPanel>
                                                         </Border>
-                                                        <Border x:Name="BS4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                        <Border x:Name="BS4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0"  MouseDown="BS4_MouseDown">
                                                             <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                                 <Border x:Name="bs4" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                     <Border.Effect>
@@ -835,7 +791,7 @@
                                                                 </TextBlock>
                                                             </StackPanel>
                                                         </Border>
-                                                        <Border x:Name="BS5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                        <Border x:Name="BS5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0"  MouseDown="BS5_MouseDown">
                                                             <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                                 <Border x:Name="bs5" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                     <Border.Effect>
@@ -859,7 +815,7 @@
                                                                 </TextBlock>
                                                             </StackPanel>
                                                         </Border>
-                                                        <Border x:Name="BS6"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                        <Border x:Name="BS6"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BS6_MouseDown">
                                                             <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                                 <Border x:Name="bs6" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                     <Border.Effect>
@@ -927,7 +883,7 @@
 
                                             <StackPanel Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment ="Center">
                                                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment ="Center">
-                                                    <Border x:Name="BD1"  Width="155" Height="200" CornerRadius="40" Margin="20,0,0,0" BorderThickness="2" BorderBrush="Orange"  >
+                                                    <Border x:Name="BD1"  Width="155" Height="200" CornerRadius="40" Margin="20,0,0,0" BorderThickness="2" BorderBrush="Orange"  MouseDown="BD1_MouseDown">
                                                         <StackPanel  Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0" >
                                                             <Border x:Name="Bd1"  Width="150" Height="150" CornerRadius="40" Margin="0" BorderThickness="0" BorderBrush="Black">
                                                                 <Border.Effect>
@@ -952,7 +908,7 @@
                                                         </StackPanel>
                                                     </Border>
 
-                                                    <Border x:Name="BD2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0">
+                                                    <Border x:Name="BD2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BD2_MouseDown">
                                                         <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                             <Border x:Name="bd2"  Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                 <Border.Effect>
@@ -975,7 +931,7 @@
                                                             </Label>
                                                         </StackPanel>
                                                     </Border>
-                                                    <Border x:Name="BD3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <Border x:Name="BD3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BD3_MouseDown">
                                                         <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                             <Border x:Name="bd3" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                 <Border.Effect>
@@ -999,7 +955,7 @@
                                                             </Label>
                                                         </StackPanel>
                                                     </Border>
-                                                    <Border x:Name="BD4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <Border x:Name="BD4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BD4_MouseDown">
                                                         <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                             <Border x:Name="bd4" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                 <Border.Effect>
@@ -1023,7 +979,7 @@
                                                             </Label>
                                                         </StackPanel>
                                                     </Border>
-                                                    <Border x:Name="BD5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                    <Border x:Name="BD5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BD5_MouseDown">
                                                         <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                             <Border x:Name="bd5" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                                 <Border.Effect>
@@ -1066,7 +1022,7 @@
 
 
                                             <StackPanel Orientation="Horizontal"  Margin="0,0,0,20">
-                                                <Border x:Name="BR1"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                <Border x:Name="BR1"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BR1_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="br1" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
@@ -1091,7 +1047,7 @@
                                                         </TextBlock>
                                                     </StackPanel>
                                                 </Border>
-                                                <Border x:Name="BR2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                <Border x:Name="BR2"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BR2_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="br2" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
@@ -1115,7 +1071,7 @@
                                                         </TextBlock>
                                                     </StackPanel>
                                                 </Border>
-                                                <Border x:Name="BR3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                <Border x:Name="BR3"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown="BR3_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="br3" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
@@ -1140,7 +1096,7 @@
                                                         </TextBlock>
                                                     </StackPanel>
                                                 </Border>
-                                                <Border x:Name="BR4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                <Border x:Name="BR4"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown ="BR4_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="br4" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
@@ -1164,7 +1120,7 @@
                                                         </TextBlock>
                                                     </StackPanel>
                                                 </Border>
-                                                <Border x:Name="BR5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" >
+                                                <Border x:Name="BR5"  Width="155" Height="200" CornerRadius="40" BorderThickness="2" BorderBrush="Orange" Margin="20,0,0,0" MouseDown ="BR5_MouseDown">
                                                     <StackPanel Orientation="Vertical" Width="150" Height="200" Margin="0,0,0,0">
                                                         <Border x:Name="br5" Width="150" Height="150" CornerRadius="40" Margin="0">
                                                             <Border.Effect>
